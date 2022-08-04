@@ -1,0 +1,29 @@
+{
+  "name": "@ndiing/util",
+  "version": "1.0.0",
+  "description": "piece of code",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndiing/util.git"
+  },
+  "keywords": [
+    "nodejs",
+    "util",
+    "piece",
+    "of",
+    "code"
+  ],
+  "author": "ndiing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndiing/util/issues"
+  },
+  "homepage": "https://github.com/ndiing/util#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
