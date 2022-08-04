@@ -1,4 +1,3 @@
-const Crypto = require('@ndiing/crypto');
 const events = require("events");
 
 // piece of code
@@ -300,101 +299,6 @@ class DateTime extends Date {
 // console.log(new DateTime().endOf("m").format("YYYY-MM-DD HH:mm:ss"));
 // console.log(new DateTime().endOf("s").format("YYYY-MM-DD HH:mm:ss"));
 
-class JWT {
-    static encode(data, options = {}) {
-        data = {
-            // iss:'',// (Issuer) Claim
-            // sub:'',// (Subject) Claim
-            // aud:'',// (Audience) Claim
-            exp: new DateTime().add(1, "minute").valueOf(), // (Expiration Time) Claim
-            // nbf:'',// (Not Before) Claim
-            iat: Date.now(), // (Issued At) Claim
-            // jti:'',// (JWT ID) Claim
-            ...data,
-        };
-        headers = Crypto.base64UrlEncode(JSON.stringify(headers));
-        data = Crypto.base64UrlEncode(JSON.stringify(data));
-        const signature = this.sign(`${headers}.${data}`, options);
-        return `${headers}.${data}.${signature}`;
-    }
-
-    static decode(data, options = {}) {
-        let headers;
-        let signature;
-        [headers, data, signature] = data.split(".");
-        headers = JSON.parse(Crypto.base64UrlDecode(headers));
-        data = JSON.parse(Crypto.base64UrlDecode(data));
-        // signature
-        return { headers, data, signature };
-    }
-
-    static sign(data, options = {}) {
-        const { secret = "", headers: { alg = "HS256" } = options.headers } = options;
-        const algorithm = {
-            HS256: "sha256",
-            HS384: "sha384",
-            HS512: "sha512",
-        }[alg];
-        let headers;
-        let signature;
-        [headers, data, signature] = data.split(".");
-        return Crypto.hmac(`${headers}.${data}`, { algorithm, key: secret, encoding: "base64url" });
-    }
-
-    static verify(data, signature, options = {}, callback = function () {}) {
-        const err = new Error();
-        // signature?
-
-        if (signature !== this.sign(data, options)) {
-            err.code = "INVALID_SIGNATURE";
-            err.message = "Invalid Signature";
-            throw err;
-        }
-
-        // exp?
-        ({ data } = this.decode(data));
-
-        if (Date.now() > data.exp) {
-            err.code = "EXPIRED_TOKEN";
-            err.message = "Expired Token";
-            throw err;
-        }
-
-        callback(data);
-
-        return true;
-    }
-}
-// // JWT
-// //
-// // Usage
-// //
-// var secret = "your-256-bit-secret";
-// var headers = { alg: "HS256", typ: "JWT" };// alg=HS256/HS384/HS512
-// var options = { headers, secret };
-// var data = {
-//     // sub: "1234567890",
-//     // name: "John Doe",
-//     // iat: 1516239022,
-// };
-// //
-// var encoded = JWT.encode(data, options);
-// // encoded = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTk1OTA1NDY0NDYsImlhdCI6MTY1OTU5MDQ4NjQ0OX0.v7Ze1oYNa1BazPJaRcvq2bOO1QOSvk8VaDHyLjMaw7w";
-// console.log(encoded);
-// console.log(JWT.decode(encoded));
-// var signature = JWT.sign(encoded, options);
-// console.log(signature);
-// console.log(
-//     JWT.verify(encoded, signature, options, async (data) => {
-//         console.log(data);
-//     })
-// );
-
-// console.log(Buffer.from('your-256-bit-secret').toString('base64'))
-// console.log(Buffer.from('your-256-bit-secret').toString('base64url'))
-// console.log(Buffer.from('your-256-bit-secret').toString('hex'))
-// console.log(Buffer.from('your-256-bit-secret').toString('utf16le'))
-
 class EventEmitter extends events {
     on(eventName, listener) {
         super.on(eventName.source ?? eventName, listener);
@@ -419,7 +323,5 @@ class EventEmitter extends events {
 module.exports = {
     Text,
     DateTime,
-    Crypto,
-    JWT,
     EventEmitter,
 };
