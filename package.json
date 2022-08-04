@@ -1,6 +1,6 @@
 {
   "name": "@ndiing/util",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "piece of code",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,8 @@
   "homepage": "https://github.com/ndiing/util#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "@ndiing/crypto": "^1.0.0"
   }
 }

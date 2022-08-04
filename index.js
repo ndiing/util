@@ -1,33 +1,23 @@
-const crypto = require("crypto");
+const Crypto = require('@ndiing/crypto');
 const events = require("events");
 
 // piece of code
 
 class Text {
     static toKebabCase(string) {
-        return (
-            string
-                //
-                .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
-                //
-                .replace(/([a-z])([A-Z])/g, "$1 $2")
-                //
-                .replace(/([^\w]|_)/g, "-")
-                .toLowerCase()
-        );
+        return string
+            .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
+            .replace(/([^\w]|_)/g, "-")
+            .toLowerCase();
     }
 
     static toSnakeCase(string) {
-        return (
-            string
-                //
-                .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
-                //
-                .replace(/([a-z])([A-Z])/g, "$1 $2")
-                //
-                .replace(/([^\w]|_)/g, "_")
-                .toLowerCase()
-        );
+        return string
+            .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
+            .replace(/([^\w]|_)/g, "_")
+            .toLowerCase();
     }
 
     static toPascalCase(string) {
@@ -45,16 +35,11 @@ class Text {
     }
 
     static toTitleCase(string) {
-        return (
-            string
-                //
-                .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
-                //
-                .replace(/([a-z])([A-Z])/g, "$1 $2")
-                //
-                .toLowerCase()
-                .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i > 0 ? " " : "") + $2.toUpperCase())
-        );
+        return string
+            .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
+            .toLowerCase()
+            .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i > 0 ? " " : "") + $2.toUpperCase());
     }
 
     static getMessage(message, regexp, ...data) {
@@ -67,6 +52,7 @@ class Text {
         let i = -1;
 
         return message //
+
             .replace(regexp, function ($, $1) {
                 ++i;
                 return data[$1] ?? data[i] ?? Object.values(data)[i] ?? "";
@@ -83,17 +69,17 @@ class Text {
 // // Usage
 // //
 // var examples = [
-//     "_lorem ipsum dolor sit amet_", 
-//     "_lorem_ipsum_dolor_sit_amet_", 
-//     "_lorem-ipsum-dolor-sit-amet_", 
-//     "_lorem/ipsum/dolor/sit/amet_", 
-//     "_lorem.ipsum.dolor.sit.amet_", 
-//     // 
-//     "_LOREM IPSUM DOLOR SIT AMET_", 
-//     "_LOREM_IPSUM_DOLOR_SIT_AMET_", 
-//     "_LOREM-IPSUM-DOLOR-SIT-AMET_", 
-//     "_LOREM/IPSUM/DOLOR/SIT/AMET_", 
-//     "_LOREM.IPSUM.DOLOR.SIT.AMET_", 
+//     "_lorem ipsum dolor sit amet_",
+//     "_lorem_ipsum_dolor_sit_amet_",
+//     "_lorem-ipsum-dolor-sit-amet_",
+//     "_lorem/ipsum/dolor/sit/amet_",
+//     "_lorem.ipsum.dolor.sit.amet_",
+//     //
+//     "_LOREM IPSUM DOLOR SIT AMET_",
+//     "_LOREM_IPSUM_DOLOR_SIT_AMET_",
+//     "_LOREM-IPSUM-DOLOR-SIT-AMET_",
+//     "_LOREM/IPSUM/DOLOR/SIT/AMET_",
+//     "_LOREM.IPSUM.DOLOR.SIT.AMET_",
 // ];
 // console.log(examples.map(Text.toKebabCase))
 // console.log(examples.map(Text.toSnakeCase))
@@ -134,20 +120,31 @@ function structuredClone(object) {
 // console.log(data2);
 
 class DateTime extends Date {
-    get minMax() {
-        return {
-            YYYY: [this.YYYY, this.YYYY],
-            M: [1, 12],
-            D: [1, (() => 32 - new Date(this.YYYY, this.M - 1).getDate())()],
-            H: [0, 23],
-            m: [0, 59],
-            s: [0, 59],
-        };
-    }
-
     constructor(...args) {
         super(...args);
-        this.setValue();
+        Object.defineProperties(this, {
+            data: { writable: true, value: {} },
+            keys: { writable: true, value: {} },
+            rate: { writable: true, value: {} },
+            weekdays: { writable: true, value: [] },
+            months: { writable: true, value: [] },
+        });
+        this.keys = {
+            year: "YYYY",
+            years: "YYYY",
+            month: "M",
+            months: "M",
+            week: "W",
+            weeks: "W",
+            date: "D",
+            dates: "D",
+            hour: "H",
+            hours: "H",
+            minute: "m",
+            minutes: "m",
+            second: "s",
+            seconds: "s",
+        };
         this.rate = {
             YYYY: 3.154e10,
             M: 2.628e9,
@@ -157,242 +154,151 @@ class DateTime extends Date {
             m: 60000,
             s: 1000,
         };
+
+        var i18n = new Intl.DateTimeFormat(DateTime.locales, { weekday: "long" });
+        for (let i = 0; i < 7; i++) this.weekdays.push(i18n.format(new Date(0, 0, i)));
+
+        var i18n = new Intl.DateTimeFormat(DateTime.locales, { month: "long" });
+        for (let i = 0; i < 12; i++) this.months.push(i18n.format(new Date(0, i)));
+
+        this.update();
     }
 
-    getKey(name) {
-        return (
-            {
-                years: "YYYY",
-                year: "YYYY",
-                months: "M",
-                month: "M",
-                days: "D",
-                day: "D",
-                weeks: "W",
-                week: "W",
-                date: "W",
-                hours: "H",
-                hour: "H",
-                minutes: "m",
-                minute: "m",
-                seconds: "s",
-                second: "s",
-            }[name] ?? name
-        );
-    }
+    update(date = this) {
+        this.data.YYYY = date.getFullYear();
+        this.data.M = date.getMonth() + 1;
+        this.data.D = date.getDate();
+        this.data.H = date.getHours();
+        this.data.m = date.getMinutes();
+        this.data.s = date.getSeconds();
+        this.data.YY = String(this.data.YYYY).slice(-2);
+        this.data.MM = String(this.data.M).padStart(2, 0);
+        this.data.DD = String(this.data.D).padStart(2, 0);
+        this.data.HH = String(this.data.H).padStart(2, 0);
+        this.data.mm = String(this.data.m).padStart(2, 0);
+        this.data.ss = String(this.data.s).padStart(2, 0);
+        this.data.MMMM = this.months[this.data.M - 1];
+        this.data.DDDD = this.weekdays[date.getDay()];
+        this.data.MMM = this.data.MMMM.slice(0, 3);
+        this.data.DDD = this.data.DDDD.slice(0, 3);
 
-    setValue(date = this) {
-        this.YYYY = date.getFullYear();
-        this.M = date.getMonth() + 1;
-        this.D = date.getDate();
-        this.H = date.getHours();
-        this.m = date.getMinutes();
-        this.s = date.getSeconds();
-        this.YY = String(this.YYYY).slice(-2);
-        this.MM = String(this.M).padStart(2, 0);
-        this.DD = String(this.D).padStart(2, 0);
-        this.HH = String(this.H).padStart(2, 0);
-        this.mm = String(this.m).padStart(2, 0);
-        this.ss = String(this.s).padStart(2, 0);
-
-        if (this !== date) {
-            this.setFullYear(this.YYYY);
-            this.setMonth(this.M - 1);
-            this.setDate(this.D);
-            this.setHours(this.H);
-            this.setMinutes(this.m);
-            this.setSeconds(this.s);
+        if (date !== this) {
+            this.setFullYear(this.data.YYYY);
+            this.setMonth(this.data.M - 1);
+            this.setDate(this.data.D);
+            this.setHours(this.data.H);
+            this.setMinutes(this.data.m);
+            this.setSeconds(this.data.s);
+            this.update();
         }
     }
 
-    getValue() {
-        return [this.YYYY, this.M - 1, this.D, this.H, this.m, this.s];
+    getKey(name) {
+        return this.keys[name] ?? name;
     }
 
-    format(string = "") {
-        return string //
-            .replace(/\b(YYYY|M|D|H|m|s|YY|MM|DD|HH|mm|ss)\b/g, ($, $1) => this[$1]);
+    getMaxDays(year, month) {
+        return 32 - new Date(year, month).getDate();
     }
 
-    add(value, name) {
-        this.setValue(new Date(this.valueOf() + this.rate[this.getKey(name)]));
+    getValues(condition, name) {
+        const key = this.getKey(name);
+        const values = {
+            YYYY: [this.data.YYYY, this.data.YYYY],
+            M: [1, 12],
+            D: [1, this.getMaxDays(this.data.YYYY, this.data.M)],
+            H: [0, 24 - 1],
+            m: [0, 60 - 1],
+            s: [0, 60 - 1],
+        };
+        let skip = true;
+
+        for (const name in values) {
+            if (key == name) skip = false;
+            if (skip) continue;
+            this.data[name] = values[name][condition];
+        }
+        return [this.data.YYYY, this.data.M - 1, this.data.D, this.data.H, this.data.m, this.data.s];
+    }
+
+    getRateValue(name, value) {
+        return value * this.rate[this.getKey(name)];
+    }
+
+    add(value = 0, name = "") {
+        this.update(new Date(this.valueOf() + this.getRateValue(name, value)));
         return this;
     }
 
-    substract(value, name) {
-        this.setValue(new Date(this.valueOf() - this.rate[this.getKey(name)]));
+    substract(value = 0, name = "") {
+        this.update(new Date(this.valueOf() - this.getRateValue(name, value)));
         return this;
     }
 
     startOf(name) {
-        const key = this.getKey(name);
-        let skip = true;
-
-        for (const name in this.minMax) {
-            if (key == name) skip = false;
-            if (skip) continue;
-            this[name] = this.minMax[name][0];
-        }
-        this.setValue(new Date(...this.getValue()));
+        this.update(new Date(...this.getValues(0, name)));
         return this;
     }
 
     endOf(name) {
-        const key = this.getKey(name);
-        let skip = true;
-
-        for (const name in this.minMax) {
-            if (key == name) skip = false;
-            if (skip) continue;
-            this[name] = this.minMax[name][1];
-        }
-        this.setValue(new Date(...this.getValue()));
+        this.update(new Date(...this.getValues(1, name)));
         return this;
     }
+
+    format(template = "") {
+        return String(template).replace(/\b(YYYY|M|D|H|m|s|YY|MM|DD|HH|mm|ss|MMMM|DDDD|MMM|DDD)\b/g, ($, $1) => this.data[$1]);
+    }
 }
+
 // // DateTime
+// DateTime.locales = "id";
 // var date = new DateTime();
-// console.log(date.format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.add(1, "weeks").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.add(1, "week").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.format("YYYY"));
+// console.log(date.format("M"));
+// console.log(date.format("D"));
+// console.log(date.format("H"));
+// console.log(date.format("m"));
+// console.log(date.format("s"));
+// console.log(date.format("YY"));
+// console.log(date.format("MM"));
+// console.log(date.format("DD"));
+// console.log(date.format("HH"));
+// console.log(date.format("mm"));
+// console.log(date.format("ss"));
+// console.log(date.format("MMMM"));
+// console.log(date.format("DDDD"));
+// console.log(date.format("MMM"));
+// console.log(date.format("DDD"));
+// console.log(date.add(1, "YYYY").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.add(1, "M").format("YYYY-MM-DD HH:mm:ss"));
 // console.log(date.add(1, "W").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.substract(1, "weeks").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.substract(1, "week").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.add(1, "D").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.add(1, "H").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.add(1, "m").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.add(1, "s").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.substract(1, "YYYY").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.substract(1, "M").format("YYYY-MM-DD HH:mm:ss"));
 // console.log(date.substract(1, "W").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("year").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("month").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("day").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("hour").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("minute").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("second").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.substract(1, "D").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.substract(1, "H").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.substract(1, "m").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(date.substract(1, "s").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(new DateTime().startOf("YYYY").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(new DateTime().startOf("M").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(new DateTime().startOf("D").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(new DateTime().startOf("H").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(new DateTime().startOf("m").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(new DateTime().startOf("s").format("YYYY-MM-DD HH:mm:ss"));
+
+// console.log(new DateTime().endOf("years").format("YYYY-MM-DD HH:mm:ss"));
 // console.log(new DateTime().endOf("year").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().endOf("month").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().endOf("day").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().endOf("hour").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().endOf("minute").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().endOf("second").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(new DateTime().endOf("YYYY").format("YYYY-MM-DD HH:mm:ss"));
 
-class Crypto {
-    static encrypt(data, options = {}) {
-        const { algorithm = "aes256", key = "", iv = "", chunk = data, encoding = "hex" } = options;
-        const cipher = crypto.createCipheriv(algorithm, key, iv);
-        return Buffer.concat([cipher.update(chunk), cipher.final()]).toString(encoding);
-    }
-
-    static decrypt(data, options = {}) {
-        const { algorithm = "aes256", key = "", iv = "", chunk = data, encoding = "hex" } = options;
-        const cipher = crypto.createDecipheriv(algorithm, key, iv);
-        return Buffer.concat([cipher.update(chunk, encoding), cipher.final()]).toString();
-    }
-
-    static privateEncrypt(data, options = {}) {
-        const { privateKey = "", encoding = "hex" } = options;
-        return crypto.privateEncrypt(privateKey, Buffer.from(data)).toString(encoding);
-    }
-
-    static publicDecrypt(data, options = {}) {
-        const { publicKey = "", encoding = "hex" } = options;
-        return crypto.publicDecrypt(publicKey, Buffer.from(data, encoding)).toString();
-    }
-
-    static publicEncrypt(data, options = {}) {
-        const { publicKey = "", encoding = "hex" } = options;
-        return crypto.publicEncrypt(publicKey, Buffer.from(data)).toString(encoding);
-    }
-
-    static privateDecrypt(data, options = {}) {
-        const { privateKey = "", encoding = "hex" } = options;
-        return crypto.privateDecrypt(privateKey, Buffer.from(data, encoding)).toString();
-    }
-
-    static sign(data, options = {}) {
-        const { algorithm = "sha256", encoding = "hex" } = options;
-        const buffer = crypto.createSign(algorithm);
-        buffer.update(data);
-        buffer.end();
-        return buffer.sign(privateKey, encoding);
-    }
-
-    static verify(data, signature, options = {}) {
-        const { algorithm = "sha256", encoding = "hex" } = options;
-        const buffer = crypto.createVerify(algorithm);
-        buffer.update(data);
-        buffer.end();
-        return buffer.verify(privateKey, signature, encoding);
-    }
-
-    static base64Encode(data) {
-        return Buffer.from(data).toString("base64");
-    }
-
-    static base64Decode(data) {
-        return Buffer.from(data, "base64").toString();
-    }
-
-    static base64UrlEncode(data) {
-        return Buffer.from(data).toString("base64url");
-    }
-
-    static base64UrlDecode(data) {
-        return Buffer.from(data, "base64url").toString();
-    }
-
-    static hash(data, options = {}) {
-        const { algorithm = "sha256", encoding = "hex" } = options;
-        return crypto.createHash(algorithm).update(data).digest(encoding);
-    }
-
-    static hmac(data, options = {}) {
-        const { algorithm = "sha256", key = "", encoding = "hex" } = options;
-        return crypto.createHmac(algorithm, key).update(data).digest(encoding);
-    }
-}
-// // Crypto
-// //
-// // Usage
-// //
-// var data = "message";
-// var key = crypto.randomBytes(16).toString("hex");
-// var iv = crypto.randomBytes(8).toString("hex");
-// //
-// var encrypted = Crypto.encrypt(data, { key, iv });
-// console.log(encrypted)
-// console.log(Crypto.decrypt(encrypted, { key, iv }));
-// //
-// var { privateKey, publicKey } = crypto.generateKeyPairSync("rsa", {
-//     modulusLength: 4096,
-//     publicKeyEncoding: {
-//         type: "spki",
-//         format: "pem",
-//     },
-//     privateKeyEncoding: {
-//         type: "pkcs8",
-//         format: "pem",
-//     },
-// });
-// var options={privateKey, publicKey}
-// var data='message'
-// //
-// var encrypted = Crypto.privateEncrypt(data, options);
-// console.log(encrypted);
-// console.log(Crypto.publicDecrypt(encrypted, options));
-// var encrypted = Crypto.publicEncrypt(data, options);
-// console.log(encrypted);
-// console.log(Crypto.privateDecrypt(encrypted, options));
-// var signature=Crypto.sign(encrypted, options)
-// console.log(signature);
-// console.log(Crypto.verify(encrypted,signature, options));
-// //
-// var encoded=Crypto.base64Encode('message')
-// console.log(encoded)
-// console.log(Crypto.base64Decode(encoded))
-// //
-// var encoded=Crypto.base64UrlEncode('message')
-// console.log(encoded)
-// console.log(Crypto.base64UrlDecode(encoded))
-// //
-// console.log(Crypto.hash("password"));
-// console.log(Crypto.hmac("password", { key: "secret" }));
+// console.log(new DateTime().endOf("M").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(new DateTime().endOf("D").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(new DateTime().endOf("H").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(new DateTime().endOf("m").format("YYYY-MM-DD HH:mm:ss"));
+// console.log(new DateTime().endOf("s").format("YYYY-MM-DD HH:mm:ss"));
 
 class JWT {
     static encode(data, options = {}) {
@@ -438,6 +344,7 @@ class JWT {
     static verify(data, signature, options = {}, callback = function () {}) {
         const err = new Error();
         // signature?
+
         if (signature !== this.sign(data, options)) {
             err.code = "INVALID_SIGNATURE";
             err.message = "Invalid Signature";
@@ -496,13 +403,7 @@ class EventEmitter extends events {
     emit(eventName, ...args) {
         super.emit(eventName, ...args);
 
-        for (const name in this._events) {
-            const regexp = new RegExp("^" + name + "$");
-
-            if (regexp.test(name) && eventName !== name) {
-                super.emit(name, eventName, ...args);
-            }
-        }
+        for (const name in this._events) if (new RegExp("^" + name + "$").test(name) && eventName !== name) super.emit(name, eventName, ...args);
     }
 }
 // // EventEmitter
