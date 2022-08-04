@@ -5,34 +5,56 @@ const events = require("events");
 
 class Text {
     static toKebabCase(string) {
-        return string
-            .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
-            .replace(/([a-z])([A-Z])/g, "$1 $2")
-            .replace(/([^\w]|_)/g, "-")
-            .toLowerCase();
+        return (
+            string
+                //
+                .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
+                //
+                .replace(/([a-z])([A-Z])/g, "$1 $2")
+                //
+                .replace(/([^\w]|_)/g, "-")
+                .toLowerCase()
+        );
     }
 
     static toSnakeCase(string) {
-        return string
-            .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
-            .replace(/([a-z])([A-Z])/g, "$1 $2")
-            .replace(/([^\w]|_)/g, "_")
-            .toLowerCase();
+        return (
+            string
+                //
+                .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
+                //
+                .replace(/([a-z])([A-Z])/g, "$1 $2")
+                //
+                .replace(/([^\w]|_)/g, "_")
+                .toLowerCase()
+        );
     }
 
     static toPascalCase(string) {
-        return string.replace(/^([^\w]|_)|([^\w]|_)$/g, "").replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2) => $2.toUpperCase());
+        return string //
+            .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //
+            .toLowerCase()
+            .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2) => $2.toUpperCase());
     }
 
     static toCamelCase(string) {
-        return string.replace(/^([^\w]|_)|([^\w]|_)$/g, "").replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i == 0 ? $2.toLowerCase() : $2.toUpperCase()));
+        return string //
+            .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //
+            .toLowerCase()
+            .replace(/([^\w]|_)(\w)/g, ($, $1, $2, i) => $2.toUpperCase());
     }
 
     static toTitleCase(string) {
-        return string
-            .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
-            .replace(/([a-z])([A-Z])/g, "$1 $2")
-            .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i > 0 ? " " : "") + $2.toUpperCase());
+        return (
+            string
+                //
+                .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
+                //
+                .replace(/([a-z])([A-Z])/g, "$1 $2")
+                //
+                .toLowerCase()
+                .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i > 0 ? " " : "") + $2.toUpperCase())
+        );
     }
 
     static getMessage(message, regexp, ...data) {
@@ -44,32 +66,39 @@ class Text {
         if (typeof object == "object") data = object;
         let i = -1;
 
-        return message.replace(regexp, function ($, $1) {
-            ++i;
-            return data[$1] ?? data[i] ?? Object.values(data)[i] ?? "";
-        });
+        return message //
+            .replace(regexp, function ($, $1) {
+                ++i;
+                return data[$1] ?? data[i] ?? Object.values(data)[i] ?? "";
+            });
     }
 
     static escapeRegExp(string) {
-        return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        return string //
+            .replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     }
 }
 // // Text
 // //
 // // Usage
 // //
-// var examples=[
-//     'lorem ipsum dolor sit amet',//text
-//     '-lorem-ipsum-dolor-sit-amet-',//invalid kebab case
-//     '_lorem_ipsum_dolor_sit_amet_',//invalid snake case
-//     ' Lorem Ipsum Dolor Sit Amet ',//invalid title case
-//     ' LoremIpsumDolorSitAmet ',//invalid pascal case
-//     ' loremIpsumDolorSitAmet ',//invalid camel case
-// ]
+// var examples = [
+//     "_lorem ipsum dolor sit amet_", 
+//     "_lorem_ipsum_dolor_sit_amet_", 
+//     "_lorem-ipsum-dolor-sit-amet_", 
+//     "_lorem/ipsum/dolor/sit/amet_", 
+//     "_lorem.ipsum.dolor.sit.amet_", 
+//     // 
+//     "_LOREM IPSUM DOLOR SIT AMET_", 
+//     "_LOREM_IPSUM_DOLOR_SIT_AMET_", 
+//     "_LOREM-IPSUM-DOLOR-SIT-AMET_", 
+//     "_LOREM/IPSUM/DOLOR/SIT/AMET_", 
+//     "_LOREM.IPSUM.DOLOR.SIT.AMET_", 
+// ];
 // console.log(examples.map(Text.toKebabCase))
 // console.log(examples.map(Text.toSnakeCase))
-// console.log(examples.map(Text.toPascalCase))
-// console.log(examples.map(Text.toCamelCase))
+// console.log(examples.map(Text.toPascalCase));
+// console.log(examples.map(Text.toCamelCase));
 // console.log(examples.map(Text.toTitleCase))
 // //
 // var template='hi my name is <name>, and im from <city>'
@@ -181,7 +210,8 @@ class DateTime extends Date {
     }
 
     format(string = "") {
-        return string.replace(/\b(YYYY|M|D|H|m|s|YY|MM|DD|HH|mm|ss)\b/g, ($, $1) => this[$1]);
+        return string //
+            .replace(/\b(YYYY|M|D|H|m|s|YY|MM|DD|HH|mm|ss)\b/g, ($, $1) => this[$1]);
     }
 
     add(value, name) {
@@ -393,7 +423,7 @@ class JWT {
     }
 
     static sign(data, options = {}) {
-        const { secret = "",headers: { alg='HS256' } = options.headers } = options;
+        const { secret = "", headers: { alg = "HS256" } = options.headers } = options;
         const algorithm = {
             HS256: "sha256",
             HS384: "sha384",
