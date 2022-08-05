@@ -11,6 +11,9 @@ const events = require("events");
  * @module util
  */
 
+/**
+ * @class Text
+*/
 class Text {
     /**
      * transform text to Kebab Case
