@@ -1,8 +1,22 @@
 const events = require("events");
 
-// piece of code
+/**
+ * Nodejs piece of code
+ * 
+ * ### Install
+ * ```
+ * npm install @ndiing/util
+ * ```
+ * 
+ * @module util
+ */
 
 class Text {
+    /**
+     * transform text to Kebab Case
+     * @param {String} string  -
+     * @returns {String}
+     */
     static toKebabCase(string) {
         return string
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
@@ -11,6 +25,11 @@ class Text {
             .toLowerCase();
     }
 
+    /**
+     * transform text to Snake Case
+     * @param {String} string  -
+     * @returns {String}
+     */
     static toSnakeCase(string) {
         return string
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
@@ -19,6 +38,11 @@ class Text {
             .toLowerCase();
     }
 
+    /**
+     * transform text to Pascal Case
+     * @param {String} string  -
+     * @returns {String}
+     */
     static toPascalCase(string) {
         return string //
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //
@@ -26,6 +50,11 @@ class Text {
             .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2) => $2.toUpperCase());
     }
 
+    /**
+     * transform text to Camel Case
+     * @param {String} string  -
+     * @returns {String}
+     */
     static toCamelCase(string) {
         return string //
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //
@@ -33,6 +62,11 @@ class Text {
             .replace(/([^\w]|_)(\w)/g, ($, $1, $2, i) => $2.toUpperCase());
     }
 
+    /**
+     * transform text to Title Case
+     * @param {String} string  -
+     * @returns {String}
+     */
     static toTitleCase(string) {
         return string
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
@@ -41,6 +75,13 @@ class Text {
             .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i > 0 ? " " : "") + $2.toUpperCase());
     }
 
+    /**
+     * template message
+     * @param {String} message -
+     * @param {RegExp} regexp -
+     * @param  {Object/Array} data 
+     * @returns {String}
+     */
     static getMessage(message, regexp, ...data) {
         if (!(regexp instanceof RegExp)) {
             data = [regexp, ...data];
@@ -58,66 +99,32 @@ class Text {
             });
     }
 
+    /**
+     * escape string for regexp
+     * @param {String} string -
+     * @returns {String}
+     */
     static escapeRegExp(string) {
         return string //
             .replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     }
 }
-// // Text
-// //
-// // Usage
-// //
-// var examples = [
-//     "_lorem ipsum dolor sit amet_",
-//     "_lorem_ipsum_dolor_sit_amet_",
-//     "_lorem-ipsum-dolor-sit-amet_",
-//     "_lorem/ipsum/dolor/sit/amet_",
-//     "_lorem.ipsum.dolor.sit.amet_",
-//     //
-//     "_LOREM IPSUM DOLOR SIT AMET_",
-//     "_LOREM_IPSUM_DOLOR_SIT_AMET_",
-//     "_LOREM-IPSUM-DOLOR-SIT-AMET_",
-//     "_LOREM/IPSUM/DOLOR/SIT/AMET_",
-//     "_LOREM.IPSUM.DOLOR.SIT.AMET_",
-// ];
-// console.log(examples.map(Text.toKebabCase))
-// console.log(examples.map(Text.toSnakeCase))
-// console.log(examples.map(Text.toPascalCase));
-// console.log(examples.map(Text.toCamelCase));
-// console.log(examples.map(Text.toTitleCase))
-// //
-// var template='hi my name is <name>, and im from <city>'
-// console.log(Text.getMessage(template))
-// console.log(Text.getMessage(template,{name:'ndiing',city:'pacitan'}))
-// console.log(Text.getMessage(template,['ndiing','pacitan']))
-// console.log(Text.getMessage(template,'ndiing','pacitan'))
-// var template='hi my name is $name, and im from $city'
-// var regexp=/\$(\w+)/g
-// console.log(Text.getMessage(template,regexp))
-// console.log(Text.getMessage(template,regexp,{name:'ndiing',city:'pacitan'}))
-// console.log(Text.getMessage(template,regexp,['ndiing','pacitan']))
-// console.log(Text.getMessage(template,regexp,'ndiing','pacitan'))
-// var template='hi my name is %s, and im from %s'
-// var regexp=/(%s)/g
-// console.log(Text.getMessage(template,regexp))
-// console.log(Text.getMessage(template,regexp,{name:'ndiing',city:'pacitan'}))
-// console.log(Text.getMessage(template,regexp,['ndiing','pacitan']))
-// console.log(Text.getMessage(template,regexp,'ndiing','pacitan'))
-// //
-// console.log(Text.escapeRegExp('at+cgmi\r\n'))
 
+/**
+ * Copy object/array
+ * @param {Object/Array} object -
+ * @returns {Object/Array}
+ */
 function structuredClone(object) {
     return JSON.parse(JSON.stringify(object));
     // return Object.assign({},object)
     // return { ...object };
 }
-// // structuredClone
-// let data = { nama: 1 };
-// let data2 = structuredClone(data);
-// data.name = 2;
-// console.log(data);
-// console.log(data2);
 
+/**
+ * @class DateTime
+ * @extends Date
+ */
 class DateTime extends Date {
     constructor(...args) {
         super(...args);
@@ -163,6 +170,7 @@ class DateTime extends Date {
         this.update();
     }
 
+    /** @private */
     update(date = this) {
         this.data.YYYY = date.getFullYear();
         this.data.M = date.getMonth() + 1;
@@ -192,14 +200,17 @@ class DateTime extends Date {
         }
     }
 
+    /** @private */
     getKey(name) {
         return this.keys[name] ?? name;
     }
 
+    /** @private */
     getMaxDays(year, month) {
         return 32 - new Date(year, month).getDate();
     }
 
+    /** @private */
     getValues(condition, name) {
         const key = this.getKey(name);
         const values = {
@@ -220,85 +231,67 @@ class DateTime extends Date {
         return [this.data.YYYY, this.data.M - 1, this.data.D, this.data.H, this.data.m, this.data.s];
     }
 
+    /** @private */
     getRateValue(name, value) {
         return value * this.rate[this.getKey(name)];
     }
 
+    /**
+     * add value by `name`
+     * @param {Number} value -
+     * @param {String} name -
+     * @returns {Date}
+     */
     add(value = 0, name = "") {
         this.update(new Date(this.valueOf() + this.getRateValue(name, value)));
         return this;
     }
 
+    /**
+     * substract value by `name`
+     * @param {Number} value -
+     * @param {String} name -
+     * @returns {Date}
+     */
     substract(value = 0, name = "") {
         this.update(new Date(this.valueOf() - this.getRateValue(name, value)));
         return this;
     }
 
+    /**
+     * get date start of
+     * @param {String} name -
+     * @returns {Date}
+     */
     startOf(name) {
         this.update(new Date(...this.getValues(0, name)));
         return this;
     }
 
+    /**
+     * get date end of
+     * @param {String} name -
+     * @returns {Date}
+     */
     endOf(name) {
         this.update(new Date(...this.getValues(1, name)));
         return this;
     }
 
+    /**
+     * Date format
+     * @param {String} template -
+     * @returns {String}
+     */
     format(template = "") {
         return String(template).replace(/\b(YYYY|M|D|H|m|s|YY|MM|DD|HH|mm|ss|MMMM|DDDD|MMM|DDD)\b/g, ($, $1) => this.data[$1]);
     }
 }
 
-// // DateTime
-// DateTime.locales = "id";
-// var date = new DateTime();
-// console.log(date.format("YYYY"));
-// console.log(date.format("M"));
-// console.log(date.format("D"));
-// console.log(date.format("H"));
-// console.log(date.format("m"));
-// console.log(date.format("s"));
-// console.log(date.format("YY"));
-// console.log(date.format("MM"));
-// console.log(date.format("DD"));
-// console.log(date.format("HH"));
-// console.log(date.format("mm"));
-// console.log(date.format("ss"));
-// console.log(date.format("MMMM"));
-// console.log(date.format("DDDD"));
-// console.log(date.format("MMM"));
-// console.log(date.format("DDD"));
-// console.log(date.add(1, "YYYY").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.add(1, "M").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.add(1, "W").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.add(1, "D").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.add(1, "H").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.add(1, "m").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.add(1, "s").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.substract(1, "YYYY").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.substract(1, "M").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.substract(1, "W").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.substract(1, "D").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.substract(1, "H").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.substract(1, "m").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(date.substract(1, "s").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("YYYY").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("M").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("D").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("H").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("m").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().startOf("s").format("YYYY-MM-DD HH:mm:ss"));
-
-// console.log(new DateTime().endOf("years").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().endOf("year").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().endOf("YYYY").format("YYYY-MM-DD HH:mm:ss"));
-
-// console.log(new DateTime().endOf("M").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().endOf("D").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().endOf("H").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().endOf("m").format("YYYY-MM-DD HH:mm:ss"));
-// console.log(new DateTime().endOf("s").format("YYYY-MM-DD HH:mm:ss"));
-
+/**
+ * @class EventEmitter
+ * @extends events
+ */
 class EventEmitter extends events {
     on(eventName, listener) {
         super.on(eventName.source ?? eventName, listener);
@@ -310,15 +303,6 @@ class EventEmitter extends events {
         for (const name in this._events) if (new RegExp("^" + name + "$").test(name) && eventName !== name) super.emit(name, eventName, ...args);
     }
 }
-// // EventEmitter
-// // events with regexp
-// //
-// // Usage
-// const event = new EventEmitter();
-// event.on("hi", console.log);
-// event.on(".*", console.log);
-// event.on(/.*/, console.log);
-// event.emit("hi", "ndiing");
 
 module.exports = {
     Text,
