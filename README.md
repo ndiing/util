@@ -1,8 +1,9 @@
 <a name="module_util"></a>
 
 ## util
-Nodejs piece of code### Install```npm install @ndiing/util```
+Nodejs piece of code### Install```npm install @ndiing/util```
 
+**See**: [./examples/index.js](./examples/index.js)  
 
 * [util](#module_util)
     * [~Text](#module_util..Text)

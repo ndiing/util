@@ -6,6 +6,7 @@ const events = require("events");
  * ```
  * npm install @ndiing/util
  * ```
+ * @see {@link ./examples/index.js}
  * @module util
  */
 
