@@ -2,12 +2,10 @@ const events = require("events");
 
 /**
  * Nodejs piece of code
- * 
  * ### Install
  * ```
  * npm install @ndiing/util
  * ```
- * 
  * @module util
  */
 

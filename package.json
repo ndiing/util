@@ -1,7 +1,7 @@
 {
   "name": "@ndiing/util",
   "version": "1.0.4",
-  "description": "piece of code",
+  "description": "Nodejs piece of code",
   "main": "index.js",
   "scripts": {
     "test": "exit 0"
