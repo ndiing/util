@@ -1,4 +1,4 @@
-# util
+# [util](https://ndiing.github.io/util/)
 util
 
 ### Install
