@@ -299,7 +299,66 @@ class String2 {
 //     console.log(String2.titleCase(string));
 // }
 
+/**
+ * 
+ */
+class Math2 {
+    /**
+     * 
+     * @param {Number} min 
+     * @param {Number} max 
+     * @returns {Number}
+     */
+    static random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    /**
+     * 
+     * @param {Number} cost 
+     * @param {Number} markup 
+     * @returns {Number}
+     */
+    static markup(cost, markup) {
+        return cost + (cost * markup) / 100;
+    }
+
+    /**
+     * 
+     * @param {Number} cost 
+     * @param {Number} margin 
+     * @returns {Number}
+     */
+    static margin(cost, margin) {
+        return cost * (cost / (cost - (cost * margin) / 100));
+    }
+
+    /**
+     * 
+     * @param {Number} original_price 
+     * @param  {...any} discounts 
+     * @returns {Number}
+     */
+    static discount(original_price, ...discounts) {
+        var discounted_price = original_price;
+        for (let i = 0; i < discounts.length; i++) {
+            const discount = discounts[i];
+            discounted_price = discounted_price - (discounted_price * discount) / 100;
+        }
+        return discounted_price;
+    }
+}
+
+// // @test
+// console.log(Math2.random(0,62))
+// console.log(Math2.markup(5000, 5));
+// console.log(Math2.margin(5000, 5));
+// console.log(Math2.discount(5000));
+// console.log(Math2.discount(5000, 5));
+// console.log(Math2.discount(5000, 5, 5, 5));
+
 module.exports = {
     Date2,
     String2,
+    Math2,
 };

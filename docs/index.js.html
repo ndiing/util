@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Date2.html">Date2</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Date2.html#add">add</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Date2.html#endOf">endOf</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Date2.html#format">format</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Date2.html#startOf">startOf</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Date2.html#subtract">subtract</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="String2.html">String2</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="String2.html#.camelCase">camelCase</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="String2.html#.kebabCase">kebabCase</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="String2.html#.pascalCase">pascalCase</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="String2.html#.snakeCase">snakeCase</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="String2.html#.titleCase">titleCase</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Date2.html">Date2</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Date2.html#add">add</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Date2.html#endOf">endOf</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Date2.html#format">format</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Date2.html#startOf">startOf</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Date2.html#subtract">subtract</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Math2.html">Math2</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Math2.html#.discount">discount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Math2.html#.margin">margin</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Math2.html#.markup">markup</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Math2.html#.random">random</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="String2.html">String2</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="String2.html#.camelCase">camelCase</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="String2.html#.kebabCase">kebabCase</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="String2.html#.pascalCase">pascalCase</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="String2.html#.snakeCase">snakeCase</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="String2.html#.titleCase">titleCase</a></span></li>
 </nav>
 
 <div id="main">
@@ -340,9 +340,68 @@ class String2 {
 //     console.log(String2.titleCase(string));
 // }
 
+/**
+ * 
+ */
+class Math2 {
+    /**
+     * 
+     * @param {Number} min 
+     * @param {Number} max 
+     * @returns {Number}
+     */
+    static random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    /**
+     * 
+     * @param {Number} cost 
+     * @param {Number} markup 
+     * @returns {Number}
+     */
+    static markup(cost, markup) {
+        return cost + (cost * markup) / 100;
+    }
+
+    /**
+     * 
+     * @param {Number} cost 
+     * @param {Number} margin 
+     * @returns {Number}
+     */
+    static margin(cost, margin) {
+        return cost * (cost / (cost - (cost * margin) / 100));
+    }
+
+    /**
+     * 
+     * @param {Number} original_price 
+     * @param  {...any} discounts 
+     * @returns {Number}
+     */
+    static discount(original_price, ...discounts) {
+        var discounted_price = original_price;
+        for (let i = 0; i &lt; discounts.length; i++) {
+            const discount = discounts[i];
+            discounted_price = discounted_price - (discounted_price * discount) / 100;
+        }
+        return discounted_price;
+    }
+}
+
+// // @test
+// console.log(Math2.random(0,62))
+// console.log(Math2.markup(5000, 5));
+// console.log(Math2.margin(5000, 5));
+// console.log(Math2.discount(5000));
+// console.log(Math2.discount(5000, 5));
+// console.log(Math2.discount(5000, 5, 5, 5));
+
 module.exports = {
     Date2,
     String2,
+    Math2,
 };
 </code></pre>
         </article>
@@ -356,7 +415,7 @@ module.exports = {
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Wed Aug 17 2022 19:51:13 GMT+0700 (Western Indonesia Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Wed Aug 17 2022 20:04:52 GMT+0700 (Western Indonesia Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
