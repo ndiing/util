@@ -282,26 +282,26 @@ class String2 {
     }
 }
 
-// @test
-let strings = [
-    //
-    "PascalCase",
-    "camelCase",
-    "/Pascal/Case/",
-    "/camel/Case/",
-    "-kebab-case-",
-    "_snake_case_",
-    " Title Case ",
-    "GET/v3/trx/history",
-];
-for (let i = 0; i < strings.length; i++) {
-    let string = strings[i];
-    // console.log(String2.pascalCase(string));
-    // console.log(String2.camelCase(string));
-    // console.log(String2.kebabCase(string));
-    // console.log(String2.snakeCase(string));
-    // console.log(String2.titleCase(string));
-}
+// // @test
+// let strings = [
+//     //
+//     "PascalCase",
+//     "camelCase",
+//     "/Pascal/Case/",
+//     "/camel/Case/",
+//     "-kebab-case-",
+//     "_snake_case_",
+//     " Title Case ",
+//     "GET/v3/trx/history",
+// ];
+// for (let i = 0; i < strings.length; i++) {
+//     let string = strings[i];
+//     // console.log(String2.pascalCase(string));
+//     // console.log(String2.camelCase(string));
+//     // console.log(String2.kebabCase(string));
+//     // console.log(String2.snakeCase(string));
+//     // console.log(String2.titleCase(string));
+// }
 
 /**
  *
