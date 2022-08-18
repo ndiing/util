@@ -225,6 +225,7 @@ class String2 {
         return ("" + string)
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //trim
             .replace(/([a-z])([A-Z])/g, "$1 $2") //split
+            .toLowerCase()
             .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => $2.toUpperCase()); //transform
     }
 
@@ -237,6 +238,7 @@ class String2 {
         return ("" + string)
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //trim
             .replace(/([a-z])([A-Z])/g, "$1 $2") //split
+            .toLowerCase()
             .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i == 0 ? $2.toLowerCase() : $2.toUpperCase())); //transform
     }
 
@@ -275,38 +277,40 @@ class String2 {
         return ("" + string)
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //trim
             .replace(/([a-z])([A-Z])/g, "$1 $2") //split
+            .toLowerCase()
             .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i == 0 ? "" : " ") + $2.toUpperCase()); //transform
     }
 }
 
-// // @test
-// let strings = [
-//     //
-//     "PascalCase",
-//     "camelCase",
-//     "/Pascal/Case/",
-//     "/camel/Case/",
-//     "-kebab-case-",
-//     "_snake_case_",
-//     " Title Case ",
-// ];
-// for (let i = 0; i < strings.length; i++) {
-//     let string = strings[i];
-//     console.log(String2.pascalCase(string));
-//     console.log(String2.camelCase(string));
-//     console.log(String2.kebabCase(string));
-//     console.log(String2.snakeCase(string));
-//     console.log(String2.titleCase(string));
-// }
+// @test
+let strings = [
+    //
+    "PascalCase",
+    "camelCase",
+    "/Pascal/Case/",
+    "/camel/Case/",
+    "-kebab-case-",
+    "_snake_case_",
+    " Title Case ",
+    "GET/v3/trx/history",
+];
+for (let i = 0; i < strings.length; i++) {
+    let string = strings[i];
+    // console.log(String2.pascalCase(string));
+    // console.log(String2.camelCase(string));
+    // console.log(String2.kebabCase(string));
+    // console.log(String2.snakeCase(string));
+    // console.log(String2.titleCase(string));
+}
 
 /**
- * 
+ *
  */
 class Math2 {
     /**
-     * 
-     * @param {Number} min 
-     * @param {Number} max 
+     *
+     * @param {Number} min
+     * @param {Number} max
      * @returns {Number}
      */
     static random(min, max) {
@@ -314,9 +318,9 @@ class Math2 {
     }
 
     /**
-     * 
-     * @param {Number} cost 
-     * @param {Number} markup 
+     *
+     * @param {Number} cost
+     * @param {Number} markup
      * @returns {Number}
      */
     static markup(cost, markup) {
@@ -324,9 +328,9 @@ class Math2 {
     }
 
     /**
-     * 
-     * @param {Number} cost 
-     * @param {Number} margin 
+     *
+     * @param {Number} cost
+     * @param {Number} margin
      * @returns {Number}
      */
     static margin(cost, margin) {
@@ -334,9 +338,9 @@ class Math2 {
     }
 
     /**
-     * 
-     * @param {Number} original_price 
-     * @param  {...any} discounts 
+     *
+     * @param {Number} original_price
+     * @param  {...any} discounts
      * @returns {Number}
      */
     static discount(original_price, ...discounts) {
