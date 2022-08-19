@@ -1,3 +1,5 @@
+const crypto = require('crypto')
+
 // https://en.wikipedia.org/wiki/Type_Allocation_Code
 const TAC = [
     {
@@ -1042,8 +1044,14 @@ class Util {
         }
         return imei;
     }
+
+    static randomUUID(){
+        return crypto.randomUUID()
+    }
 }
 // console.log(Util.randomIMEI());
+// console.log(Util.randomUUID());
+
 
 Util.Date2 = Date2;
 Util.String2 = String2;
