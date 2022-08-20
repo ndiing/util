@@ -1,71 +1,55 @@
-# [util](https://ndiing.github.io/util/)
-util
+# Date2
 
-### Install
-```
-npm install @ndiinginc/util
-```
+## [Methods]()
 
-### Usage
-```js
-// Create new date object
-var date = new Date2()
+[`Date2.add()`]()
 
-// Format output
-console.log(date.format('YYYY')) // 2022
-console.log(date.format('M')) // 8
-console.log(date.format('D')) // 17
-console.log(date.format('H')) // 11
-console.log(date.format('m')) // 49
-console.log(date.format('s')) // 25
-console.log(date.format('YY')) // 22
-console.log(date.format('MM')) // 08
-console.log(date.format('DD')) // 17
-console.log(date.format('HH')) // 11
-console.log(date.format('mm')) // 49
-console.log(date.format('ss')) // 25
-console.log(date.format('MMM')) // Aug
-console.log(date.format('MMMM')) // August
-console.log(date.format('DDD')) // Wed
-console.log(date.format('DDDD')) // Wednesday
-console.log(date.format('H:m\r\nDD/MM/YYYY'))
+[`Date2.subtract()`]()
 
-// add
-// unit=
-// years
-// year
-// y
-// months
-// month
-// M
-// days
-// day
-// date
-// d
-// hours
-// hour
-// h
-// minutes
-// minute
-// m
-// seconds
-// second
-// s
-console.log(date.add(1,'d')) // Date2 2022-08-18T04:52:09.758Z
-console.log(date.add(1,'d')) // Date2 2022-08-19T04:52:09.758Z
-console.log(date.add(1,'d')) // Date2 2022-08-20T04:52:09.758Z
+[`Date2.startOf()`]()
 
-// subtract
-// unit=same with `add` unit
-console.log(date.subtract(1,'d')) // Date2 2022-08-19T04:53:58.724Z
-console.log(date.subtract(1,'d')) // Date2 2022-08-18T04:53:58.724Z
-console.log(date.subtract(1,'d')) // Date2 2022-08-17T04:53:58.724Z
+[`Date2.endOf()`]()
 
-// start of
-// unit=same with `add` unit
-console.log(date.startOf('year'))
+[`Date2.format()`]()
 
-// end of
-// unit=same with `add` unit
-console.log(date.endOf('year'))
-```
+# String2
+
+## [Methods]()
+
+[`String2.pascalCase()`]()
+
+[`String2.camelCase()`]()
+
+[`String2.kebabCase()`]()
+
+[`String2.snakeCase()`]()
+
+[`String2.titleCase()`]()
+
+# Math2
+
+## [Methods]()
+
+[`Math2.random()`]()
+
+[`Math2.randomFixed()`]()
+
+[`Math2.markup()`]()
+
+[`Math2.margin()`]()
+
+[`Math2.discount()`]()
+
+# Util
+
+## [Methods]()
+
+[`Util.checkLuhn()`]()
+
+[`Util.randomIMEI()`]()
+
+# Global
+
+## [See also]()
+
+-   See also
