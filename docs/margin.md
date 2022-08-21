@@ -11,6 +11,7 @@
 `cost`
 
 `Number`: **Default Value** 
+
 `margin`
 
 `Number`: **Default Value** 

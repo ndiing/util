@@ -11,6 +11,7 @@
 `min`
 
 `Number`: **Default Value** 
+
 `max`
 
 `Number`: **Default Value** 
