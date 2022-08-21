@@ -1,4 +1,4 @@
-const crypto = require('crypto')
+const crypto = require("crypto");
 
 // https://en.wikipedia.org/wiki/Type_Allocation_Code
 const TAC = [
@@ -624,9 +624,6 @@ const TAC = [
     },
 ];
 
-/**
- *
- */
 class Date2 extends Date {
     constructor(...args) {
         super(...args);
@@ -721,58 +718,16 @@ class Date2 extends Date {
         return this.unit[unit] ?? unit;
     }
 
-    /**
-     *
-     * @example
-     * // add
-     * // unit=
-     * // years
-     * // year
-     * // y
-     * // months
-     * // month
-     * // M
-     * // days
-     * // day
-     * // date
-     * // d
-     * // hours
-     * // hour
-     * // h
-     * // minutes
-     * // minute
-     * // m
-     * // seconds
-     * // second
-     * // s
-     * console.log(date.add(1,'d')) // Date2 2022-08-18T04:52:09.758Z
-     * console.log(date.add(1,'d')) // Date2 2022-08-19T04:52:09.758Z
-     * console.log(date.add(1,'d')) // Date2 2022-08-20T04:52:09.758Z
-     * @param {Number} value
-     * @param {String} unit - `y, year, years, YYYY`,`month, months, M`,`d, day, days, date, D`,`h, hour, hours, H`,`m, minute, minutes`,`s, second, seconds`
-     * @returns {Object/Date2}
-     */
     add(value, unit) {
         this.set[this.getUnit(unit)](this.get[this.getUnit(unit)]() + value);
         return this;
     }
 
-    /**
-     *
-     * @param {Number} value
-     * @param {String} unit - `y, year, years, YYYY`,`month, months, M`,`d, day, days, date, D`,`h, hour, hours, H`,`m, minute, minutes`,`s, second, seconds`
-     * @returns {Object/Date2}
-     */
     subtract(value, unit) {
         this.set[this.getUnit(unit)](this.get[this.getUnit(unit)]() - value);
         return this;
     }
 
-    /**
-     *
-     * @param {String} unit - `y, year, years, YYYY`,`month, months, M`,`d, day, days, date, D`,`h, hour, hours, H`,`m, minute, minutes`,`s, second, seconds`
-     * @returns {Object/Date2}
-     */
     startOf(unit) {
         let skip = true;
 
@@ -788,11 +743,6 @@ class Date2 extends Date {
         return this;
     }
 
-    /**
-     *
-     * @param {String} unit - `y, year, years, YYYY`,`month, months, M`,`d, day, days, date, D`,`h, hour, hours, H`,`m, minute, minutes`,`s, second, seconds`
-     * @returns {Object/Date2}
-     */
     endOf(unit) {
         let skip = true;
 
@@ -808,178 +758,73 @@ class Date2 extends Date {
         return this;
     }
 
-    /**
-     *
-     * @example
-     * // Format output
-     * console.log(date.format('YYYY')) // 2022
-     * console.log(date.format('M')) // 8
-     * console.log(date.format('D')) // 17
-     * console.log(date.format('H')) // 11
-     * console.log(date.format('m')) // 49
-     * console.log(date.format('s')) // 25
-     * console.log(date.format('YY')) // 22
-     * console.log(date.format('MM')) // 08
-     * console.log(date.format('DD')) // 17
-     * console.log(date.format('HH')) // 11
-     * console.log(date.format('mm')) // 49
-     * console.log(date.format('ss')) // 25
-     * console.log(date.format('MMM')) // Aug
-     * console.log(date.format('MMMM')) // August
-     * console.log(date.format('DDD')) // Wed
-     * console.log(date.format('DDDD')) // Wednesday
-     * console.log(date.format('H:m\r\nDD/MM/YYYY'))
-     * @param {String} anyFmt - `YYYY`,`YY`,`M`,`MM`,`MMM`,`MMMM`,`D`,`DD`,`DDD`,`DDDD`,`H`,`HH`,`m`,`mm`,`s`,`ss`
-     * @returns {String}
-     */
     format(anyFmt) {
         const regexp = new RegExp(`\\b(${Object.getOwnPropertyNames(this.value).join("|")})\\b`, "g");
         return anyFmt.replace(regexp, ($, $1) => this.value[$1]());
     }
 }
 
-/**
- *
- */
 class String2 {
-    /**
-     *
-     * @param {String} string
-     * @returns {String}
-     */
     static pascalCase(string = "") {
         return ("" + string)
-            .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //trim
-            .replace(/([a-z])([A-Z])/g, "$1 $2") //split
+            .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
             .toLowerCase()
-            .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => $2.toUpperCase()); //transform
+            .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => $2.toUpperCase());
     }
 
-    /**
-     *
-     * @param {String} string
-     * @returns {String}
-     */
     static camelCase(string = "") {
         return ("" + string)
-            .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //trim
-            .replace(/([a-z])([A-Z])/g, "$1 $2") //split
+            .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
             .toLowerCase()
-            .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i == 0 ? $2.toLowerCase() : $2.toUpperCase())); //transform
+            .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i == 0 ? $2.toLowerCase() : $2.toUpperCase()));
     }
 
-    /**
-     *
-     * @param {String} string
-     * @returns {String}
-     */
     static kebabCase(string = "") {
         return ("" + string)
-            .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //trim
-            .replace(/([a-z])([A-Z])/g, "$1 $2") //split
+            .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
             .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i == 0 ? "" : "-") + $2)
-            .toLowerCase(); //transform
+            .toLowerCase();
     }
 
-    /**
-     *
-     * @param {String} string
-     * @returns {String}
-     */
     static snakeCase(string = "") {
         return ("" + string)
-            .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //trim
-            .replace(/([a-z])([A-Z])/g, "$1 $2") //split
+            .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
             .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i == 0 ? "" : "_") + $2)
-            .toLowerCase(); //transform
+            .toLowerCase();
     }
 
-    /**
-     *
-     * @param {String} string
-     * @returns {String}
-     */
     static titleCase(string = "") {
         return ("" + string)
-            .replace(/^([^\w]|_)|([^\w]|_)$/g, "") //trim
-            .replace(/([a-z])([A-Z])/g, "$1 $2") //split
+            .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
             .toLowerCase()
-            .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i == 0 ? "" : " ") + $2.toUpperCase()); //transform
+            .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i == 0 ? "" : " ") + $2.toUpperCase());
     }
 }
 
-// // @test
-// let strings = [
-//     //
-//     "PascalCase",
-//     "camelCase",
-//     "/Pascal/Case/",
-//     "/camel/Case/",
-//     "-kebab-case-",
-//     "_snake_case_",
-//     " Title Case ",
-//     "GET/v3/trx/history",
-// ];
-// for (let i = 0; i < strings.length; i++) {
-//     let string = strings[i];
-//     // console.log(String2.pascalCase(string));
-//     // console.log(String2.camelCase(string));
-//     // console.log(String2.kebabCase(string));
-//     // console.log(String2.snakeCase(string));
-//     // console.log(String2.titleCase(string));
-// }
-
-/**
- *
- */
 class Math2 {
-    /**
-     *
-     * @param {Number} min
-     * @param {Number} max
-     * @returns {Number}
-     */
     static random(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    /**
-     * 
-     * @param {Number} count 
-     * @returns {Number}
-     */
     static randomFixed(count) {
         let small = parseInt("1".padEnd(count, 0));
         let large = parseInt("9".padEnd(count, 0));
         return Math.floor(small + Math.random() * large);
     }
 
-    /**
-     *
-     * @param {Number} cost
-     * @param {Number} markup
-     * @returns {Number}
-     */
     static markup(cost, markup) {
         return cost + (cost * markup) / 100;
     }
 
-    /**
-     *
-     * @param {Number} cost
-     * @param {Number} margin
-     * @returns {Number}
-     */
     static margin(cost, margin) {
         return cost * (cost / (cost - (cost * margin) / 100));
     }
 
-    /**
-     *
-     * @param {Number} original_price
-     * @param  {...any} discounts
-     * @returns {Number}
-     */
     static discount(original_price, ...discounts) {
         var discounted_price = original_price;
         for (let i = 0; i < discounts.length; i++) {
@@ -990,24 +835,7 @@ class Math2 {
     }
 }
 
-// // @test
-// console.log(Math2.random(0,62))
-// console.log(Math2.markup(5000, 5));
-// console.log(Math2.margin(5000, 5));
-// console.log(Math2.discount(5000));
-// console.log(Math2.discount(5000, 5));
-// console.log(Math2.discount(5000, 5, 5, 5));
-// console.log(Math2.randomFixed());
-
-/**
- *
- */
 class Util {
-    /**
-     * @see {@link https://en.wikipedia.org/wiki/Luhn_algorithm}
-     * @param {String/Number} purportedCC
-     * @returns {Boolean}
-     */
     static checkLuhn(purportedCC) {
         let nDigits = purportedCC.length;
         let sum = 0;
@@ -1025,18 +853,11 @@ class Util {
         return sum % 10 == 0;
     }
 
-    /**
-     *
-     * @returns {String/Number}
-     */
     static randomIMEI() {
-        // TAC: 01483600
         let tac = TAC[Math2.random(0, TAC.length - 1)].TAC;
-        // SN: 526855 CD: 3
-        // let sn = Math2.randomFixed(6);
-        // let cd = Math2.random(1, 9);
+
         let sncd = Math2.randomFixed(7);
-        // 8+6+1
+
         let imei = "" + tac + sncd;
         let valid = this.checkLuhn(imei);
         if (!valid) {
@@ -1045,13 +866,10 @@ class Util {
         return imei;
     }
 
-    static randomUUID(){
-        return crypto.randomUUID()
+    static randomUUID() {
+        return crypto.randomUUID();
     }
 }
-// console.log(Util.randomIMEI());
-// console.log(Util.randomUUID());
-
 
 Util.Date2 = Date2;
 Util.String2 = String2;
