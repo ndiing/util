@@ -1,54 +1,166 @@
 # Date2
 
+<!-- Description -->
+
+
+
+
 ## [Methods]()
 
-[`Date2.add()`]()
+<!-- _Description_ -->
 
-[`Date2.subtract()`]()
+[`add()`]()
 
-[`Date2.startOf()`]()
+<!-- Description -->
+[`subtract()`]()
 
-[`Date2.endOf()`]()
+<!-- Description -->
+[`startOf()`]()
 
-[`Date2.format()`]()
+<!-- Description -->
+[`endOf()`]()
 
+<!-- Description -->
+[`format()`]()
+
+<!-- Description -->
+
+
+
+
+<!-- ## [Events]() -->
+<!--  -->
+<!-- Description -->
+<!--  -->
+<!-- [`eventName`]() event -->
+<!--  -->
+<!-- Description -->
+<!--  -->
+<!-- ## [Example]() -->
+<!--  -->
+<!-- ### [Title]() -->
+<!--  -->
+<!-- Description -->
 # String2
 
+<!-- Description -->
+
+
+
+
+
+
 ## [Static methods]()
 
-[`String2.pascalCase()`]()
+<!-- _Description_ -->
 
-[`String2.camelCase()`]()
+[`pascalCase()`]()
 
-[`String2.kebabCase()`]()
+<!-- Description -->
+[`camelCase()`]()
 
-[`String2.snakeCase()`]()
+<!-- Description -->
+[`kebabCase()`]()
 
-[`String2.titleCase()`]()
+<!-- Description -->
+[`snakeCase()`]()
 
+<!-- Description -->
+[`titleCase()`]()
+
+<!-- Description -->
+
+
+<!-- ## [Events]() -->
+<!--  -->
+<!-- Description -->
+<!--  -->
+<!-- [`eventName`]() event -->
+<!--  -->
+<!-- Description -->
+<!--  -->
+<!-- ## [Example]() -->
+<!--  -->
+<!-- ### [Title]() -->
+<!--  -->
+<!-- Description -->
 # Math2
 
+<!-- Description -->
+
+
+
+
+
+
 ## [Static methods]()
 
-[`Math2.random()`]()
+<!-- _Description_ -->
 
-[`Math2.randomFixed()`]()
+[`random()`]()
 
-[`Math2.markup()`]()
+<!-- Description -->
+[`randomFixed()`]()
 
-[`Math2.margin()`]()
+<!-- Description -->
+[`markup()`]()
 
-[`Math2.discount()`]()
+<!-- Description -->
+[`margin()`]()
 
+<!-- Description -->
+[`discount()`]()
+
+<!-- Description -->
+
+
+<!-- ## [Events]() -->
+<!--  -->
+<!-- Description -->
+<!--  -->
+<!-- [`eventName`]() event -->
+<!--  -->
+<!-- Description -->
+<!--  -->
+<!-- ## [Example]() -->
+<!--  -->
+<!-- ### [Title]() -->
+<!--  -->
+<!-- Description -->
 # Util
 
+<!-- Description -->
+
+
+
+
+
+
 ## [Static methods]()
 
-[`Util.checkLuhn()`]()
+<!-- _Description_ -->
 
-[`Util.randomIMEI()`]()
+[`checkLuhn()`]()
 
-# Global
+<!-- Description -->
+[`randomIMEI()`]()
+
+<!-- Description -->
+
+
+<!-- ## [Events]() -->
+<!--  -->
+<!-- Description -->
+<!--  -->
+<!-- [`eventName`]() event -->
+<!--  -->
+<!-- Description -->
+<!--  -->
+<!-- ## [Example]() -->
+<!--  -->
+<!-- ### [Title]() -->
+<!--  -->
+<!-- Description -->
 
 ## [See also]()
 
