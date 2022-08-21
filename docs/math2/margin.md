@@ -11,6 +11,12 @@ margin(cost,margin);
 ```
 
 <!-- parameters -->
+### Parameters
+
+- `cost`
+
+- `margin`
+
 <!-- parameters -->
 
 <!-- return -->

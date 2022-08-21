@@ -11,6 +11,12 @@ random(min,max);
 ```
 
 <!-- parameters -->
+### Parameters
+
+- `min`
+
+- `max`
+
 <!-- parameters -->
 
 <!-- return -->

@@ -11,6 +11,10 @@ snakeCase(string);
 ```
 
 <!-- parameters -->
+### Parameters
+
+- `string`
+
 <!-- parameters -->
 
 <!-- return -->

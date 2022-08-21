@@ -11,6 +11,10 @@ camelCase(string);
 ```
 
 <!-- parameters -->
+### Parameters
+
+- `string`
+
 <!-- parameters -->
 
 <!-- return -->

@@ -11,6 +11,10 @@ checkLuhn(purportedCC);
 ```
 
 <!-- parameters -->
+### Parameters
+
+- `purportedCC`
+
 <!-- parameters -->
 
 <!-- return -->

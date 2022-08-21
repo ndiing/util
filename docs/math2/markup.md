@@ -11,6 +11,12 @@ markup(cost,markup);
 ```
 
 <!-- parameters -->
+### Parameters
+
+- `cost`
+
+- `markup`
+
 <!-- parameters -->
 
 <!-- return -->
