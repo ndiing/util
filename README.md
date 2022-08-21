@@ -1,7 +1,5 @@
 # Date2
 
-## [Properties]()
-
 ## [Methods]()
 
 [`Date2.add()`]()
@@ -16,11 +14,33 @@
 
 # String2
 
+## [Static methods]()
+
+[`String2.pascalCase()`]()
+
+[`String2.camelCase()`]()
+
+[`String2.kebabCase()`]()
+
+[`String2.snakeCase()`]()
+
+[`String2.titleCase()`]()
+
 # Math2
 
-# Util
+## [Static methods]()
 
-## [Static properties]()
+[`Math2.random()`]()
+
+[`Math2.randomFixed()`]()
+
+[`Math2.markup()`]()
+
+[`Math2.margin()`]()
+
+[`Math2.discount()`]()
+
+# Util
 
 ## [Static methods]()
 
@@ -29,8 +49,6 @@
 [`Util.randomIMEI()`]()
 
 # Global
-
-## [Methods]()
 
 ## [See also]()
 
