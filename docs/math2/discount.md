@@ -14,9 +14,7 @@ discount(original_price,discounts);
 ### Parameters
 
 - `original_price`
-
 - `discounts`
-
 <!-- parameters -->
 
 <!-- return -->

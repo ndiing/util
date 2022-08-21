@@ -14,9 +14,7 @@ markup(cost,markup);
 ### Parameters
 
 - `cost`
-
 - `markup`
-
 <!-- parameters -->
 
 <!-- return -->

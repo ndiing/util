@@ -14,7 +14,6 @@ camelCase(string);
 ### Parameters
 
 - `string`
-
 <!-- parameters -->
 
 <!-- return -->

@@ -14,7 +14,6 @@ titleCase(string);
 ### Parameters
 
 - `string`
-
 <!-- parameters -->
 
 <!-- return -->

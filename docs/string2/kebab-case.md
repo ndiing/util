@@ -14,7 +14,6 @@ kebabCase(string);
 ### Parameters
 
 - `string`
-
 <!-- parameters -->
 
 <!-- return -->

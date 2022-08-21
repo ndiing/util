@@ -14,7 +14,6 @@ randomFixed(count);
 ### Parameters
 
 - `count`
-
 <!-- parameters -->
 
 <!-- return -->

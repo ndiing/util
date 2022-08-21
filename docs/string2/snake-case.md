@@ -14,7 +14,6 @@ snakeCase(string);
 ### Parameters
 
 - `string`
-
 <!-- parameters -->
 
 <!-- return -->

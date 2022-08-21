@@ -14,9 +14,7 @@ random(min,max);
 ### Parameters
 
 - `min`
-
 - `max`
-
 <!-- parameters -->
 
 <!-- return -->

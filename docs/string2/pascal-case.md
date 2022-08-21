@@ -14,7 +14,6 @@ pascalCase(string);
 ### Parameters
 
 - `string`
-
 <!-- parameters -->
 
 <!-- return -->
