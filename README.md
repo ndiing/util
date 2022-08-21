@@ -345,10 +345,6 @@ purportedCC|`String/Number`|
 
     randomIMEI()
 
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
 
 #### [Return value]()
 
