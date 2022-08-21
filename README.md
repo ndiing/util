@@ -1,29 +1,29 @@
 # Date2
 
-<!-- Description -->
+Description
 
 
 
 
 ## [Methods]()
 
-<!-- _Description_ -->
+_Description_
 
-[`add()`]()
+[`add()`](./docs/add.md)
 
-<!-- Description -->
-[`subtract()`]()
 
-<!-- Description -->
-[`startOf()`]()
+[`subtract()`](./docs/subtract.md)
 
-<!-- Description -->
-[`endOf()`]()
 
-<!-- Description -->
-[`format()`]()
+[`startOf()`](./docs/start-of.md)
 
-<!-- Description -->
+
+[`endOf()`](./docs/end-of.md)
+
+
+[`format()`](./docs/format.md)
+
+
 
 
 
@@ -36,14 +36,16 @@
 <!--  -->
 <!-- Description -->
 <!--  -->
+
 <!-- ## [Example]() -->
 <!--  -->
 <!-- ### [Title]() -->
 <!--  -->
 <!-- Description -->
+
 # String2
 
-<!-- Description -->
+Description
 
 
 
@@ -52,23 +54,23 @@
 
 ## [Static methods]()
 
-<!-- _Description_ -->
+_Description_
 
-[`pascalCase()`]()
+[`pascalCase()`](./docs/pascal-case.md)
 
-<!-- Description -->
-[`camelCase()`]()
 
-<!-- Description -->
-[`kebabCase()`]()
+[`camelCase()`](./docs/camel-case.md)
 
-<!-- Description -->
-[`snakeCase()`]()
 
-<!-- Description -->
-[`titleCase()`]()
+[`kebabCase()`](./docs/kebab-case.md)
 
-<!-- Description -->
+
+[`snakeCase()`](./docs/snake-case.md)
+
+
+[`titleCase()`](./docs/title-case.md)
+
+
 
 
 <!-- ## [Events]() -->
@@ -79,14 +81,16 @@
 <!--  -->
 <!-- Description -->
 <!--  -->
+
 <!-- ## [Example]() -->
 <!--  -->
 <!-- ### [Title]() -->
 <!--  -->
 <!-- Description -->
+
 # Math2
 
-<!-- Description -->
+Description
 
 
 
@@ -95,23 +99,23 @@
 
 ## [Static methods]()
 
-<!-- _Description_ -->
+_Description_
 
-[`random()`]()
+[`random()`](./docs/random.md)
 
-<!-- Description -->
-[`randomFixed()`]()
 
-<!-- Description -->
-[`markup()`]()
+[`randomFixed()`](./docs/random-fixed.md)
 
-<!-- Description -->
-[`margin()`]()
 
-<!-- Description -->
-[`discount()`]()
+[`markup()`](./docs/markup.md)
 
-<!-- Description -->
+
+[`margin()`](./docs/margin.md)
+
+
+[`discount()`](./docs/discount.md)
+
+
 
 
 <!-- ## [Events]() -->
@@ -122,14 +126,16 @@
 <!--  -->
 <!-- Description -->
 <!--  -->
+
 <!-- ## [Example]() -->
 <!--  -->
 <!-- ### [Title]() -->
 <!--  -->
 <!-- Description -->
+
 # Util
 
-<!-- Description -->
+Description
 
 
 
@@ -138,14 +144,14 @@
 
 ## [Static methods]()
 
-<!-- _Description_ -->
+_Description_
 
-[`checkLuhn()`]()
+[`checkLuhn()`](./docs/check-luhn.md)
 
-<!-- Description -->
-[`randomIMEI()`]()
 
-<!-- Description -->
+[`randomIMEI()`](./docs/random-imei.md)
+
+
 
 
 <!-- ## [Events]() -->
@@ -156,11 +162,13 @@
 <!--  -->
 <!-- Description -->
 <!--  -->
+
 <!-- ## [Example]() -->
 <!--  -->
 <!-- ### [Title]() -->
 <!--  -->
 <!-- Description -->
+
 
 ## [See also]()
 
