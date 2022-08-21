@@ -1,6 +1,22 @@
 # Date2
 
+## [Properties]()
+
+[`Date2.unit`]()
+
+[`Date2.get`]()
+
+[`Date2.set`]()
+
+[`Date2.min`]()
+
+[`Date2.max`]()
+
+[`Date2.value`]()
+
 ## [Methods]()
+
+[`Date2.getUnit()`]()
 
 [`Date2.add()`]()
 
@@ -14,7 +30,7 @@
 
 # String2
 
-## [Methods]()
+## [Static methods]()
 
 [`String2.pascalCase()`]()
 
@@ -28,7 +44,7 @@
 
 # Math2
 
-## [Methods]()
+## [Static methods]()
 
 [`Math2.random()`]()
 
@@ -42,14 +58,48 @@
 
 # Util
 
-## [Methods]()
+## [Static properties]()
+
+[`Util.Date2`]()
+
+[`Util.String2`]()
+
+[`Util.Math2`]()
+
+## [Static methods]()
 
 [`Util.checkLuhn()`]()
 
 [`Util.randomIMEI()`]()
 
+[`Util.randomUUID()`]()
+
 # Global
+
+## [Methods]()
+
+[`YY()`]()
+
+[`M()`]()
+
+[`MM()`]()
+
+[`MMM()`]()
+
+[`MMMM()`]()
+
+[`DD()`]()
+
+[`DDD()`]()
+
+[`DDDD()`]()
+
+[`HH()`]()
+
+[`mm()`]()
+
+[`ss()`]()
 
 ## [See also]()
 
--   See also
+-   [`link`]()
