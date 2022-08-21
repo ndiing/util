@@ -1,7 +1,7 @@
 {
   "name": "@ndiinginc/util",
   "version": "1.0.5",
-  "description": "nodejs util piece of code",
+  "description": "Piece of code",
   "main": "index.js",
   "directories": {
     "doc": "docs"
