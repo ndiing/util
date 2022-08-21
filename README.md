@@ -1,357 +1,130 @@
 
-# Date2
+# Global
 
 
+<!-- examples -->
+<!-- examples -->
+
+<!-- properties -->
+## Properties
 
 
-
-## [Methods]()
-
-<!-- _Methods._ -->
+[`TAC`](./docs//tac.md)
 
 
-## Date2#add()
+<!-- properties -->
 
+<!-- staticproperties -->
+<!-- staticproperties -->
 
+<!-- methods -->
+<!-- methods -->
 
-### [Syntax]()
+<!-- staticmethods -->
+<!-- staticmethods -->
 
-    add(value,unit)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-value|`Number`|
-unit|`String`|
-
-#### [Return value]()
-
-`Object/Date2`
-
-## Date2#subtract()
-
-
-
-### [Syntax]()
-
-    subtract(value,unit)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-value|`Number`|
-unit|`String`|
-
-#### [Return value]()
-
-`Object/Date2`
-
-## Date2#startOf()
-
-
-
-### [Syntax]()
-
-    startOf(unit)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-unit|`String`|
-
-#### [Return value]()
-
-`Object/Date2`
-
-## Date2#endOf()
-
-
-
-### [Syntax]()
-
-    endOf(unit)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-unit|`String`|
-
-#### [Return value]()
-
-`Object/Date2`
-
-## Date2#format()
-
-
-
-### [Syntax]()
-
-    format(anyFmt)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-anyFmt|`String`|
-
-#### [Return value]()
-
-`String`
 
 # String2
 
 
+<!-- examples -->
+<!-- examples -->
+
+<!-- properties -->
+<!-- properties -->
+
+<!-- staticproperties -->
+<!-- staticproperties -->
+
+<!-- methods -->
+<!-- methods -->
+
+<!-- staticmethods -->
+## Static methods
 
 
-
-## [Methods]()
-
-<!-- _Methods._ -->
+[`String2.pascalCase(string)`](./docs/string2/pascal-case.md)
 
 
-## String2.pascalCase()
+[`String2.camelCase(string)`](./docs/string2/camel-case.md)
 
 
-
-### [Syntax]()
-
-    pascalCase(string)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-string|`String`|
-
-#### [Return value]()
-
-`String`
-
-## String2.camelCase()
+[`String2.kebabCase(string)`](./docs/string2/kebab-case.md)
 
 
-
-### [Syntax]()
-
-    camelCase(string)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-string|`String`|
-
-#### [Return value]()
-
-`String`
-
-## String2.kebabCase()
+[`String2.snakeCase(string)`](./docs/string2/snake-case.md)
 
 
-
-### [Syntax]()
-
-    kebabCase(string)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-string|`String`|
-
-#### [Return value]()
-
-`String`
-
-## String2.snakeCase()
+[`String2.titleCase(string)`](./docs/string2/title-case.md)
 
 
+<!-- staticmethods -->
 
-### [Syntax]()
-
-    snakeCase(string)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-string|`String`|
-
-#### [Return value]()
-
-`String`
-
-## String2.titleCase()
-
-
-
-### [Syntax]()
-
-    titleCase(string)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-string|`String`|
-
-#### [Return value]()
-
-`String`
 
 # Math2
 
 
+<!-- examples -->
+<!-- examples -->
+
+<!-- properties -->
+<!-- properties -->
+
+<!-- staticproperties -->
+<!-- staticproperties -->
+
+<!-- methods -->
+<!-- methods -->
+
+<!-- staticmethods -->
+## Static methods
 
 
-
-## [Methods]()
-
-<!-- _Methods._ -->
+[`Math2.random(min,max)`](./docs/math2/random.md)
 
 
-## Math2.random()
+[`Math2.randomFixed(count)`](./docs/math2/random-fixed.md)
 
 
-
-### [Syntax]()
-
-    random(min,max)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-min|`Number`|
-max|`Number`|
-
-#### [Return value]()
-
-`Number`
-
-## Math2.randomFixed()
+[`Math2.markup(cost,markup)`](./docs/math2/markup.md)
 
 
-
-### [Syntax]()
-
-    randomFixed(count)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-count|`Number`|
-
-#### [Return value]()
-
-`Number`
-
-## Math2.markup()
+[`Math2.margin(cost,margin)`](./docs/math2/margin.md)
 
 
-
-### [Syntax]()
-
-    markup(cost,markup)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-cost|`Number`|
-markup|`Number`|
-
-#### [Return value]()
-
-`Number`
-
-## Math2.margin()
+[`Math2.discount(original_price,discounts)`](./docs/math2/discount.md)
 
 
+<!-- staticmethods -->
 
-### [Syntax]()
-
-    margin(cost,margin)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-cost|`Number`|
-margin|`Number`|
-
-#### [Return value]()
-
-`Number`
-
-## Math2.discount()
-
-
-
-### [Syntax]()
-
-    discount(original_price,discounts)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-original_price|`Number`|
-discounts|`any`|
-
-#### [Return value]()
-
-`Number`
 
 # Util
 
 
+<!-- examples -->
+<!-- examples -->
+
+<!-- properties -->
+<!-- properties -->
+
+<!-- staticproperties -->
+<!-- staticproperties -->
+
+<!-- methods -->
+<!-- methods -->
+
+<!-- staticmethods -->
+## Static methods
 
 
-
-## [Methods]()
-
-<!-- _Methods._ -->
+[`Util.checkLuhn(purportedCC)`](./docs/util/check-luhn.md)
 
 
-## Util.checkLuhn()
+[`Util.randomIMEI()`](./docs/util/random-imei.md)
 
 
-
-### [Syntax]()
-
-    checkLuhn(purportedCC)
-
-#### [Parameters]()
-
-name|type|defaultvalue
----|---|---
-purportedCC|`String/Number`|
-
-#### [Return value]()
-
-`Boolean`
-
-## Util.randomIMEI()
+[`Util.randomUUID()`](./docs/util/random-uuid.md)
 
 
-
-### [Syntax]()
-
-    randomIMEI()
-
-
-#### [Return value]()
-
-`String/Number`
-
-# 
-
-
-
+<!-- staticmethods -->
 

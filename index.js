@@ -1,6 +1,8 @@
 const crypto = require("crypto");
 
-// https://en.wikipedia.org/wiki/Type_Allocation_Code
+/**
+ * @see {@link https://en.wikipedia.org/wiki/Type_Allocation_Code}
+ */
 const TAC = [
     {
         TAC: "35875105",
@@ -624,6 +626,9 @@ const TAC = [
     },
 ];
 
+/**
+ *
+ */
 class Date2 extends Date {
     constructor(...args) {
         super(...args);
@@ -764,7 +769,13 @@ class Date2 extends Date {
     }
 }
 
+/**
+ *
+ */
 class String2 {
+    /**
+     *
+     */
     static pascalCase(string = "") {
         return ("" + string)
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
@@ -773,6 +784,9 @@ class String2 {
             .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => $2.toUpperCase());
     }
 
+    /**
+     *
+     */
     static camelCase(string = "") {
         return ("" + string)
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
@@ -781,6 +795,9 @@ class String2 {
             .replace(/(^|[^\w]|_)(\w)/g, ($, $1, $2, i) => (i == 0 ? $2.toLowerCase() : $2.toUpperCase()));
     }
 
+    /**
+     *
+     */
     static kebabCase(string = "") {
         return ("" + string)
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
@@ -789,6 +806,9 @@ class String2 {
             .toLowerCase();
     }
 
+    /**
+     *
+     */
     static snakeCase(string = "") {
         return ("" + string)
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
@@ -797,6 +817,9 @@ class String2 {
             .toLowerCase();
     }
 
+    /**
+     *
+     */
     static titleCase(string = "") {
         return ("" + string)
             .replace(/^([^\w]|_)|([^\w]|_)$/g, "")
@@ -806,25 +829,43 @@ class String2 {
     }
 }
 
+/**
+ *
+ */
 class Math2 {
+    /**
+     *
+     */
     static random(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
+    /**
+     *
+     */
     static randomFixed(count) {
         let small = parseInt("1".padEnd(count, 0));
         let large = parseInt("9".padEnd(count, 0));
         return Math.floor(small + Math.random() * large);
     }
 
+    /**
+     *
+     */
     static markup(cost, markup) {
         return cost + (cost * markup) / 100;
     }
 
+    /**
+     *
+     */
     static margin(cost, margin) {
         return cost * (cost / (cost - (cost * margin) / 100));
     }
 
+    /**
+     *
+     */
     static discount(original_price, ...discounts) {
         var discounted_price = original_price;
         for (let i = 0; i < discounts.length; i++) {
@@ -835,7 +876,13 @@ class Math2 {
     }
 }
 
+/**
+ *
+ */
 class Util {
+    /**
+     *
+     */
     static checkLuhn(purportedCC) {
         let nDigits = purportedCC.length;
         let sum = 0;
@@ -853,6 +900,9 @@ class Util {
         return sum % 10 == 0;
     }
 
+    /**
+     *
+     */
     static randomIMEI() {
         let tac = TAC[Math2.random(0, TAC.length - 1)].TAC;
 
@@ -866,6 +916,9 @@ class Util {
         return imei;
     }
 
+    /**
+     *
+     */
     static randomUUID() {
         return crypto.randomUUID();
     }
