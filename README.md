@@ -10,95 +10,95 @@
 <!-- _Methods._ -->
 
 
-### Date2#add()
+## Date2#add()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     add(value,unit)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 value|`Number`|
 unit|`String`|
 
-##### [Return value]()
+#### [Return value]()
 
 `Object/Date2`
 
-### Date2#subtract()
+## Date2#subtract()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     subtract(value,unit)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 value|`Number`|
 unit|`String`|
 
-##### [Return value]()
+#### [Return value]()
 
 `Object/Date2`
 
-### Date2#startOf()
+## Date2#startOf()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     startOf(unit)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 unit|`String`|
 
-##### [Return value]()
+#### [Return value]()
 
 `Object/Date2`
 
-### Date2#endOf()
+## Date2#endOf()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     endOf(unit)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 unit|`String`|
 
-##### [Return value]()
+#### [Return value]()
 
 `Object/Date2`
 
-### Date2#format()
+## Date2#format()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     format(anyFmt)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 anyFmt|`String`|
 
-##### [Return value]()
+#### [Return value]()
 
 `String`
 
@@ -113,93 +113,93 @@ anyFmt|`String`|
 <!-- _Methods._ -->
 
 
-### String2.pascalCase()
+## String2.pascalCase()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     pascalCase(string)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 string|`String`|
 
-##### [Return value]()
+#### [Return value]()
 
 `String`
 
-### String2.camelCase()
+## String2.camelCase()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     camelCase(string)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 string|`String`|
 
-##### [Return value]()
+#### [Return value]()
 
 `String`
 
-### String2.kebabCase()
+## String2.kebabCase()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     kebabCase(string)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 string|`String`|
 
-##### [Return value]()
+#### [Return value]()
 
 `String`
 
-### String2.snakeCase()
+## String2.snakeCase()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     snakeCase(string)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 string|`String`|
 
-##### [Return value]()
+#### [Return value]()
 
 `String`
 
-### String2.titleCase()
+## String2.titleCase()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     titleCase(string)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 string|`String`|
 
-##### [Return value]()
+#### [Return value]()
 
 `String`
 
@@ -214,97 +214,97 @@ string|`String`|
 <!-- _Methods._ -->
 
 
-### Math2.random()
+## Math2.random()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     random(min,max)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 min|`Number`|
 max|`Number`|
 
-##### [Return value]()
+#### [Return value]()
 
 `Number`
 
-### Math2.randomFixed()
+## Math2.randomFixed()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     randomFixed(count)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 count|`Number`|
 
-##### [Return value]()
+#### [Return value]()
 
 `Number`
 
-### Math2.markup()
+## Math2.markup()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     markup(cost,markup)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 cost|`Number`|
 markup|`Number`|
 
-##### [Return value]()
+#### [Return value]()
 
 `Number`
 
-### Math2.margin()
+## Math2.margin()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     margin(cost,margin)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 cost|`Number`|
 margin|`Number`|
 
-##### [Return value]()
+#### [Return value]()
 
 `Number`
 
-### Math2.discount()
+## Math2.discount()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     discount(original_price,discounts)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 original_price|`Number`|
 discounts|`any`|
 
-##### [Return value]()
+#### [Return value]()
 
 `Number`
 
@@ -319,38 +319,38 @@ discounts|`any`|
 <!-- _Methods._ -->
 
 
-### Util.checkLuhn()
+## Util.checkLuhn()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     checkLuhn(purportedCC)
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 purportedCC|`String/Number`|
 
-##### [Return value]()
+#### [Return value]()
 
 `Boolean`
 
-### Util.randomIMEI()
+## Util.randomIMEI()
 
 
 
-#### [Syntax]()
+### [Syntax]()
 
     randomIMEI()
 
-##### [Parameters]()
+#### [Parameters]()
 
 name|type|defaultvalue
 ---|---|---
 
-##### [Return value]()
+#### [Return value]()
 
 `String/Number`
 
