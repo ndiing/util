@@ -34,6 +34,21 @@ npm install @ndiinginc/util
 <!-- staticproperties -->
 
 <!-- methods -->
+### Methods
+<dl>
+    <dt><code><a href="./docs/date2/get-unit.md">Date2#getUnit()</a></code></dt>
+    <dd></dd>
+    <dt><code><a href="./docs/date2/add.md">Date2#add()</a></code></dt>
+    <dd></dd>
+    <dt><code><a href="./docs/date2/subtract.md">Date2#subtract()</a></code></dt>
+    <dd></dd>
+    <dt><code><a href="./docs/date2/start-of.md">Date2#startOf()</a></code></dt>
+    <dd></dd>
+    <dt><code><a href="./docs/date2/end-of.md">Date2#endOf()</a></code></dt>
+    <dd></dd>
+    <dt><code><a href="./docs/date2/format.md">Date2#format()</a></code></dt>
+    <dd></dd>
+</dl>
 <!-- methods -->
 
 <!-- staticmethods -->

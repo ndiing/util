@@ -630,6 +630,9 @@ const TAC = [
  *
  */
 class Date2 extends Date {
+    /**
+     *
+     */
     constructor(...args) {
         super(...args);
 
@@ -719,20 +722,32 @@ class Date2 extends Date {
         });
     }
 
+    /**
+     *
+     */
     getUnit(unit) {
         return this.unit[unit] ?? unit;
     }
 
+    /**
+     *
+     */
     add(value, unit) {
         this.set[this.getUnit(unit)](this.get[this.getUnit(unit)]() + value);
         return this;
     }
 
+    /**
+     *
+     */
     subtract(value, unit) {
         this.set[this.getUnit(unit)](this.get[this.getUnit(unit)]() - value);
         return this;
     }
 
+    /**
+     *
+     */
     startOf(unit) {
         let skip = true;
 
@@ -748,6 +763,9 @@ class Date2 extends Date {
         return this;
     }
 
+    /**
+     *
+     */
     endOf(unit) {
         let skip = true;
 
@@ -763,6 +781,9 @@ class Date2 extends Date {
         return this;
     }
 
+    /**
+     *
+     */
     format(anyFmt) {
         const regexp = new RegExp(`\\b(${Object.getOwnPropertyNames(this.value).join("|")})\\b`, "g");
         return anyFmt.replace(regexp, ($, $1) => this.value[$1]());

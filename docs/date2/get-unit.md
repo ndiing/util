@@ -1,0 +1,19 @@
+## Date2#getUnit()
+
+### Syntax
+```
+getUnit(unit)
+```
+
+### Parameters
+<dl>
+    <dt><code>unit</code></dt>
+</dl>
+
+### Return value
+
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+
