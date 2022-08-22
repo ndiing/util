@@ -6,6 +6,9 @@ npm install @ndiinginc/util
 
 ## Global
 
+<!-- constructor -->
+<!-- constructor -->
+
 <!-- properties -->
 ### Properties
 <dl>
@@ -26,6 +29,14 @@ npm install @ndiinginc/util
 <!-- examples -->
 <!-- examples -->
 ## Date2
+
+<!-- constructor -->
+### Constructor
+<dl>
+    <dt><code><a href="./docs//date2.md">Date2()</a></code></dt>
+    <dd></dd>
+</dl>
+<!-- constructor -->
 
 <!-- properties -->
 <!-- properties -->
@@ -58,6 +69,9 @@ npm install @ndiinginc/util
 <!-- examples -->
 ## String2
 
+<!-- constructor -->
+<!-- constructor -->
+
 <!-- properties -->
 <!-- properties -->
 
@@ -87,6 +101,9 @@ npm install @ndiinginc/util
 <!-- examples -->
 ## Math2
 
+<!-- constructor -->
+<!-- constructor -->
+
 <!-- properties -->
 <!-- properties -->
 
@@ -115,6 +132,9 @@ npm install @ndiinginc/util
 <!-- examples -->
 <!-- examples -->
 ## Util
+
+<!-- constructor -->
+<!-- constructor -->
 
 <!-- properties -->
 <!-- properties -->
