@@ -1,19 +1,18 @@
-# Util.randomIMEI()
+## Util.randomIMEI()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-randomIMEI();
+### Syntax
+```
+randomIMEI()
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+</dl>
 
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

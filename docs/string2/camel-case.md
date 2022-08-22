@@ -1,20 +1,19 @@
-# String2.camelCase()
+## String2.camelCase()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-camelCase(string);
+### Syntax
+```
+camelCase(string)
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+    <dt><code>string</code></dt>
+</dl>
 
-- `string`
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

@@ -1,19 +1,18 @@
-# Util.randomUUID()
+## Util.randomUUID()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-randomUUID();
+### Syntax
+```
+randomUUID()
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+</dl>
 
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

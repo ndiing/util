@@ -1,20 +1,19 @@
-# Util.checkLuhn()
+## Util.checkLuhn()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-checkLuhn(purportedCC);
+### Syntax
+```
+checkLuhn(purportedCC)
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+    <dt><code>purportedCC</code></dt>
+</dl>
 
-- `purportedCC`
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

@@ -1,21 +1,20 @@
-# Math2.margin()
+## Math2.margin()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-margin(cost,margin);
+### Syntax
+```
+margin(cost,margin)
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+    <dt><code>cost</code></dt>
+    <dt><code>margin</code></dt>
+</dl>
 
-- `cost`
-- `margin`
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

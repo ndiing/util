@@ -1,20 +1,19 @@
-# String2.snakeCase()
+## String2.snakeCase()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-snakeCase(string);
+### Syntax
+```
+snakeCase(string)
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+    <dt><code>string</code></dt>
+</dl>
 
-- `string`
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

@@ -1,20 +1,19 @@
-# String2.titleCase()
+## String2.titleCase()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-titleCase(string);
+### Syntax
+```
+titleCase(string)
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+    <dt><code>string</code></dt>
+</dl>
 
-- `string`
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

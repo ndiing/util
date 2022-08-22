@@ -1,21 +1,20 @@
-# Math2.random()
+## Math2.random()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-random(min,max);
+### Syntax
+```
+random(min,max)
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+    <dt><code>min</code></dt>
+    <dt><code>max</code></dt>
+</dl>
 
-- `min`
-- `max`
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

@@ -1,20 +1,19 @@
-# String2.pascalCase()
+## String2.pascalCase()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-pascalCase(string);
+### Syntax
+```
+pascalCase(string)
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+    <dt><code>string</code></dt>
+</dl>
 
-- `string`
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

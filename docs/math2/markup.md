@@ -1,21 +1,20 @@
-# Math2.markup()
+## Math2.markup()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-markup(cost,markup);
+### Syntax
+```
+markup(cost,markup)
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+    <dt><code>cost</code></dt>
+    <dt><code>markup</code></dt>
+</dl>
 
-- `cost`
-- `markup`
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

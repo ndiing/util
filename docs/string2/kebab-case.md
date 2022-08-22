@@ -1,20 +1,19 @@
-# String2.kebabCase()
+## String2.kebabCase()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-kebabCase(string);
+### Syntax
+```
+kebabCase(string)
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+    <dt><code>string</code></dt>
+</dl>
 
-- `string`
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

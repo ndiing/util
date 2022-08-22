@@ -1,7 +1,7 @@
 const crypto = require("crypto");
 
 /**
- * @see {@link https://en.wikipedia.org/wiki/Type_Allocation_Code}
+ * @see https://en.wikipedia.org/wiki/Type_Allocation_Code
  */
 const TAC = [
     {

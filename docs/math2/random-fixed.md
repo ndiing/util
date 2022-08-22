@@ -1,20 +1,19 @@
-# Math2.randomFixed()
+## Math2.randomFixed()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-randomFixed(count);
+### Syntax
+```
+randomFixed(count)
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+    <dt><code>count</code></dt>
+</dl>
 
-- `count`
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+

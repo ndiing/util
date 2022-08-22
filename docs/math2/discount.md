@@ -1,21 +1,20 @@
-# Math2.discount()
+## Math2.discount()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-discount(original_price,discounts);
+### Syntax
+```
+discount(original_price,discounts)
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+    <dt><code>original_price</code></dt>
+    <dt><code>discounts</code></dt>
+</dl>
 
-- `original_price`
-- `discounts`
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+
