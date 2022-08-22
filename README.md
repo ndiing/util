@@ -4,9 +4,14 @@
 npm install @ndiinginc/util
 ```
 
-## TAC
+## Global
 
 <!-- properties -->
+### Properties
+<dl>
+    <dt><code><a href="./docs//tac.md">TAC</a></code></dt>
+    <dd></dd>
+</dl>
 <!-- properties -->
 
 <!-- staticproperties -->

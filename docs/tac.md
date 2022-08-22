@@ -1,19 +1,18 @@
-# TAC()
+## TAC()
 
-
-<!-- examples -->
-<!-- examples -->
-
-## Syntax
-
-```js
-TAC();
+### Syntax
+```
+TAC()
 ```
 
-<!-- parameters -->
 ### Parameters
+<dl>
+</dl>
 
-<!-- parameters -->
+### Return value
 
-<!-- return -->
-<!-- return -->
+<dl>
+    <dt>None <code>undefined</code></dt>
+</dl>
+
+
