@@ -33,7 +33,7 @@ npm install @ndiinginc/util
 <!-- constructor -->
 ### Constructor
 <dl>
-    <dt><code><a href="./docs//date2.md">Date2()</a></code></dt>
+    <dt><code><a href="./docs//date-2.md">Date2()</a></code></dt>
     <dd></dd>
 </dl>
 <!-- constructor -->
@@ -47,17 +47,17 @@ npm install @ndiinginc/util
 <!-- methods -->
 ### Methods
 <dl>
-    <dt><code><a href="./docs/date2/get-unit.md">Date2#getUnit()</a></code></dt>
+    <dt><code><a href="./docs/date-2/get-unit.md">Date2#getUnit()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/date2/add.md">Date2#add()</a></code></dt>
+    <dt><code><a href="./docs/date-2/add.md">Date2#add()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/date2/subtract.md">Date2#subtract()</a></code></dt>
+    <dt><code><a href="./docs/date-2/subtract.md">Date2#subtract()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/date2/start-of.md">Date2#startOf()</a></code></dt>
+    <dt><code><a href="./docs/date-2/start-of.md">Date2#startOf()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/date2/end-of.md">Date2#endOf()</a></code></dt>
+    <dt><code><a href="./docs/date-2/end-of.md">Date2#endOf()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/date2/format.md">Date2#format()</a></code></dt>
+    <dt><code><a href="./docs/date-2/format.md">Date2#format()</a></code></dt>
     <dd></dd>
 </dl>
 <!-- methods -->
@@ -84,15 +84,15 @@ npm install @ndiinginc/util
 <!-- staticmethods -->
 ### Static Methods
 <dl>
-    <dt><code><a href="./docs/string2/pascal-case.md">String2.pascalCase()</a></code></dt>
+    <dt><code><a href="./docs/string-2/pascal-case.md">String2.pascalCase()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/string2/camel-case.md">String2.camelCase()</a></code></dt>
+    <dt><code><a href="./docs/string-2/camel-case.md">String2.camelCase()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/string2/kebab-case.md">String2.kebabCase()</a></code></dt>
+    <dt><code><a href="./docs/string-2/kebab-case.md">String2.kebabCase()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/string2/snake-case.md">String2.snakeCase()</a></code></dt>
+    <dt><code><a href="./docs/string-2/snake-case.md">String2.snakeCase()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/string2/title-case.md">String2.titleCase()</a></code></dt>
+    <dt><code><a href="./docs/string-2/title-case.md">String2.titleCase()</a></code></dt>
     <dd></dd>
 </dl>
 <!-- staticmethods -->
@@ -116,15 +116,15 @@ npm install @ndiinginc/util
 <!-- staticmethods -->
 ### Static Methods
 <dl>
-    <dt><code><a href="./docs/math2/random.md">Math2.random()</a></code></dt>
+    <dt><code><a href="./docs/math-2/random.md">Math2.random()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/math2/random-fixed.md">Math2.randomFixed()</a></code></dt>
+    <dt><code><a href="./docs/math-2/random-fixed.md">Math2.randomFixed()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/math2/markup.md">Math2.markup()</a></code></dt>
+    <dt><code><a href="./docs/math-2/markup.md">Math2.markup()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/math2/margin.md">Math2.margin()</a></code></dt>
+    <dt><code><a href="./docs/math-2/margin.md">Math2.margin()</a></code></dt>
     <dd></dd>
-    <dt><code><a href="./docs/math2/discount.md">Math2.discount()</a></code></dt>
+    <dt><code><a href="./docs/math-2/discount.md">Math2.discount()</a></code></dt>
     <dd></dd>
 </dl>
 <!-- staticmethods -->
