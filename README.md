@@ -4,6 +4,10 @@
 npm install @ndiinginc/util
 ```
 
+
+<!-- examples -->
+<!-- examples -->
+
 ## Global
 
 <!-- constructor -->
@@ -28,6 +32,7 @@ npm install @ndiinginc/util
 
 <!-- examples -->
 <!-- examples -->
+
 ## Date2
 
 <!-- constructor -->
@@ -67,6 +72,7 @@ npm install @ndiinginc/util
 
 <!-- examples -->
 <!-- examples -->
+
 ## String2
 
 <!-- constructor -->
@@ -99,6 +105,7 @@ npm install @ndiinginc/util
 
 <!-- examples -->
 <!-- examples -->
+
 ## Math2
 
 <!-- constructor -->
@@ -131,6 +138,7 @@ npm install @ndiinginc/util
 
 <!-- examples -->
 <!-- examples -->
+
 ## Util
 
 <!-- constructor -->
@@ -156,6 +164,3 @@ npm install @ndiinginc/util
     <dd></dd>
 </dl>
 <!-- staticmethods -->
-
-<!-- examples -->
-<!-- examples -->
