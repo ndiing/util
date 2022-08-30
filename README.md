@@ -1,161 +1,245 @@
-# Install
+# util
 
-```
-npm install @ndiinginc/util
-```
 
-## Global
+### Index
+- Global
 
-<!-- constructor -->
-<!-- constructor -->
+    <!-- properties -->
+    - Properties
+        - [`TAC`](#astnode100000009)
+    <!-- properties -->
+    <!-- staticproperties -->
+    <!-- staticproperties -->
+    <!-- methods -->
+    <!-- methods -->
+    <!-- staticmethods -->
+    <!-- staticmethods -->
+    <!-- events -->
+    <!-- events -->
+- Date2
+
+    <!-- properties -->
+    <!-- properties -->
+    <!-- staticproperties -->
+    <!-- staticproperties -->
+    <!-- methods -->
+    - Methods
+        - [`Date2#getUnit`](#astnode100001359)
+        - [`Date2#add`](#astnode100001372)
+        - [`Date2#subtract`](#astnode100001403)
+        - [`Date2#startOf`](#astnode100001434)
+        - [`Date2#endOf`](#astnode100001483)
+        - [`Date2#format`](#astnode100001532)
+    <!-- methods -->
+    <!-- staticmethods -->
+    <!-- staticmethods -->
+    <!-- events -->
+    <!-- events -->
+- String2
+
+    <!-- properties -->
+    <!-- properties -->
+    <!-- staticproperties -->
+    <!-- staticproperties -->
+    <!-- methods -->
+    <!-- methods -->
+    <!-- staticmethods -->
+    - Static methods
+        - [`String2.pascalCase`](#astnode100001575)
+        - [`String2.camelCase`](#astnode100001612)
+        - [`String2.kebabCase`](#astnode100001657)
+        - [`String2.snakeCase`](#astnode100001698)
+        - [`String2.titleCase`](#astnode100001739)
+    <!-- staticmethods -->
+    <!-- events -->
+    <!-- events -->
+- Math2
+
+    <!-- properties -->
+    <!-- properties -->
+    <!-- staticproperties -->
+    <!-- staticproperties -->
+    <!-- methods -->
+    <!-- methods -->
+    <!-- staticmethods -->
+    - Static methods
+        - [`Math2.random`](#astnode100001786)
+        - [`Math2.randomFixed`](#astnode100001809)
+        - [`Math2.markup`](#astnode100001849)
+        - [`Math2.margin`](#astnode100001863)
+        - [`Math2.discount`](#astnode100001881)
+    <!-- staticmethods -->
+    <!-- events -->
+    <!-- events -->
+- Util
+
+    <!-- properties -->
+    <!-- properties -->
+    <!-- staticproperties -->
+    <!-- staticproperties -->
+    <!-- methods -->
+    <!-- methods -->
+    <!-- staticmethods -->
+    - Static methods
+        - [`Util.checkLuhn`](#astnode100001926)
+        - [`Util.randomIMEI`](#astnode100002006)
+        - [`Util.randomUUID`](#astnode100002062)
+    <!-- staticmethods -->
+    <!-- events -->
+    <!-- events -->
+
+# Global
+
 
 <!-- properties -->
 ### Properties
-<dl>
-    <dt><code><a href="./docs//tac.md">TAC</a></code></dt>
-    <dd></dd>
-</dl>
+
+<div><a href="./docs/astnode100000009.md" name="astnode100000009"><code>TAC</code></a></div>
+
+
 <!-- properties -->
-
 <!-- staticproperties -->
 <!-- staticproperties -->
-
 <!-- methods -->
 <!-- methods -->
-
 <!-- staticmethods -->
 <!-- staticmethods -->
+<!-- events -->
+<!-- events -->
 
 <!-- examples -->
 <!-- examples -->
-## Date2
 
-<!-- constructor -->
-### Constructor
-<dl>
-    <dt><code><a href="./docs//date-2.md">Date2()</a></code></dt>
-    <dd></dd>
-</dl>
-<!-- constructor -->
+# Date2
+
 
 <!-- properties -->
 <!-- properties -->
-
 <!-- staticproperties -->
 <!-- staticproperties -->
-
 <!-- methods -->
 ### Methods
-<dl>
-    <dt><code><a href="./docs/date-2/get-unit.md">Date2#getUnit()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/date-2/add.md">Date2#add()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/date-2/subtract.md">Date2#subtract()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/date-2/start-of.md">Date2#startOf()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/date-2/end-of.md">Date2#endOf()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/date-2/format.md">Date2#format()</a></code></dt>
-    <dd></dd>
-</dl>
+
+<div><a href="./docs/astnode100001359.md" name="astnode100001359"><code>Date2#getUnit(unit)</code></a></div>
+
+
+<div><a href="./docs/astnode100001372.md" name="astnode100001372"><code>Date2#add(value,unit)</code></a></div>
+
+
+<div><a href="./docs/astnode100001403.md" name="astnode100001403"><code>Date2#subtract(value,unit)</code></a></div>
+
+
+<div><a href="./docs/astnode100001434.md" name="astnode100001434"><code>Date2#startOf(unit)</code></a></div>
+
+
+<div><a href="./docs/astnode100001483.md" name="astnode100001483"><code>Date2#endOf(unit)</code></a></div>
+
+
+<div><a href="./docs/astnode100001532.md" name="astnode100001532"><code>Date2#format(anyFmt)</code></a></div>
+
+
 <!-- methods -->
-
 <!-- staticmethods -->
 <!-- staticmethods -->
+<!-- events -->
+<!-- events -->
 
 <!-- examples -->
 <!-- examples -->
-## String2
 
-<!-- constructor -->
-<!-- constructor -->
+# String2
+
 
 <!-- properties -->
 <!-- properties -->
-
 <!-- staticproperties -->
 <!-- staticproperties -->
-
 <!-- methods -->
 <!-- methods -->
+<!-- staticmethods -->
+### Static methods
+
+<div><a href="./docs/astnode100001575.md" name="astnode100001575"><code>String2.pascalCase(string)</code></a></div>
+
+
+<div><a href="./docs/astnode100001612.md" name="astnode100001612"><code>String2.camelCase(string)</code></a></div>
+
+
+<div><a href="./docs/astnode100001657.md" name="astnode100001657"><code>String2.kebabCase(string)</code></a></div>
+
+
+<div><a href="./docs/astnode100001698.md" name="astnode100001698"><code>String2.snakeCase(string)</code></a></div>
+
+
+<div><a href="./docs/astnode100001739.md" name="astnode100001739"><code>String2.titleCase(string)</code></a></div>
+
 
 <!-- staticmethods -->
-### Static Methods
-<dl>
-    <dt><code><a href="./docs/string-2/pascal-case.md">String2.pascalCase()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/string-2/camel-case.md">String2.camelCase()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/string-2/kebab-case.md">String2.kebabCase()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/string-2/snake-case.md">String2.snakeCase()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/string-2/title-case.md">String2.titleCase()</a></code></dt>
-    <dd></dd>
-</dl>
-<!-- staticmethods -->
+<!-- events -->
+<!-- events -->
 
 <!-- examples -->
 <!-- examples -->
-## Math2
 
-<!-- constructor -->
-<!-- constructor -->
+# Math2
+
 
 <!-- properties -->
 <!-- properties -->
-
 <!-- staticproperties -->
 <!-- staticproperties -->
-
 <!-- methods -->
 <!-- methods -->
+<!-- staticmethods -->
+### Static methods
+
+<div><a href="./docs/astnode100001786.md" name="astnode100001786"><code>Math2.random(min,max)</code></a></div>
+
+
+<div><a href="./docs/astnode100001809.md" name="astnode100001809"><code>Math2.randomFixed(count)</code></a></div>
+
+
+<div><a href="./docs/astnode100001849.md" name="astnode100001849"><code>Math2.markup(cost,markup)</code></a></div>
+
+
+<div><a href="./docs/astnode100001863.md" name="astnode100001863"><code>Math2.margin(cost,margin)</code></a></div>
+
+
+<div><a href="./docs/astnode100001881.md" name="astnode100001881"><code>Math2.discount(original_price,discounts)</code></a></div>
+
 
 <!-- staticmethods -->
-### Static Methods
-<dl>
-    <dt><code><a href="./docs/math-2/random.md">Math2.random()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/math-2/random-fixed.md">Math2.randomFixed()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/math-2/markup.md">Math2.markup()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/math-2/margin.md">Math2.margin()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/math-2/discount.md">Math2.discount()</a></code></dt>
-    <dd></dd>
-</dl>
-<!-- staticmethods -->
+<!-- events -->
+<!-- events -->
 
 <!-- examples -->
 <!-- examples -->
-## Util
 
-<!-- constructor -->
-<!-- constructor -->
+# Util
+
 
 <!-- properties -->
 <!-- properties -->
-
 <!-- staticproperties -->
 <!-- staticproperties -->
-
 <!-- methods -->
 <!-- methods -->
+<!-- staticmethods -->
+### Static methods
+
+<div><a href="./docs/astnode100001926.md" name="astnode100001926"><code>Util.checkLuhn(purportedCC)</code></a></div>
+
+
+<div><a href="./docs/astnode100002006.md" name="astnode100002006"><code>Util.randomIMEI()</code></a></div>
+
+
+<div><a href="./docs/astnode100002062.md" name="astnode100002062"><code>Util.randomUUID()</code></a></div>
+
 
 <!-- staticmethods -->
-### Static Methods
-<dl>
-    <dt><code><a href="./docs/util/check-luhn.md">Util.checkLuhn()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/util/random-imei.md">Util.randomIMEI()</a></code></dt>
-    <dd></dd>
-    <dt><code><a href="./docs/util/random-uuid.md">Util.randomUUID()</a></code></dt>
-    <dd></dd>
-</dl>
-<!-- staticmethods -->
+<!-- events -->
+<!-- events -->
 
 <!-- examples -->
 <!-- examples -->
+
