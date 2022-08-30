@@ -96,6 +96,9 @@ npm install @ndiinginc/util
 # Global
 
 
+<!-- constructor -->
+<!-- constructor -->
+
 <!-- properties -->
 ### Properties
 
@@ -117,6 +120,9 @@ npm install @ndiinginc/util
 
 # Date2
 
+
+<!-- constructor -->
+<!-- constructor -->
 
 <!-- properties -->
 <!-- properties -->
@@ -155,6 +161,9 @@ npm install @ndiinginc/util
 # String2
 
 
+<!-- constructor -->
+<!-- constructor -->
+
 <!-- properties -->
 <!-- properties -->
 <!-- staticproperties -->
@@ -189,6 +198,9 @@ npm install @ndiinginc/util
 # Math2
 
 
+<!-- constructor -->
+<!-- constructor -->
+
 <!-- properties -->
 <!-- properties -->
 <!-- staticproperties -->
@@ -222,6 +234,9 @@ npm install @ndiinginc/util
 
 # Util
 
+
+<!-- constructor -->
+<!-- constructor -->
 
 <!-- properties -->
 <!-- properties -->
