@@ -102,11 +102,6 @@ npm install @ndiinginc/util
 
 
 <!-- constructor -->
-### Constructor
-
-<div><a href="./docs/.md" name=""><code>()</code></a></div>
-
-
 <!-- constructor -->
 
 <!-- properties -->
