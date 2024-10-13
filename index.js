@@ -4,18 +4,18 @@ const {
     toSnakeCase,
     toKebabCase,
     toTitleCase,
-}=require('./src/string.js')
+}=require('./lib/string.js')
 const {
     retry,
     CircuitBreaker,
     Bulkhead,
     timeout,
     RateLimiter,
-}=require('./src/resilience.js')
+}=require('./lib/resilience.js')
 const {
     Mutex,
     Semaphore
-}=require('./src/control.js')
+}=require('./lib/control.js')
 
 
 
