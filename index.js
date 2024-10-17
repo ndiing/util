@@ -1,25 +1,9 @@
-const {
-    toPascalCase,
-    toCamelCase,
-    toSnakeCase,
-    toKebabCase,
-    toTitleCase,
-}=require('./lib/string.js')
-const {
-    retry,
-    CircuitBreaker,
-    Bulkhead,
-    timeout,
-    RateLimiter,
-}=require('./lib/resilience.js')
-const {
-    Mutex,
-    Semaphore
-}=require('./lib/control.js')
+const { toPascalCase, toCamelCase, toSnakeCase, toKebabCase, toTitleCase } = require("./lib/string.js");
+const { retry, CircuitBreaker, Bulkhead, timeout, RateLimiter } = require("./lib/resilience.js");
+const { Mutex, Semaphore } = require("./lib/control.js");
+// require('./dev/control.js')
 
-
-
-module.exports={
+module.exports = {
     // string
     toPascalCase,
     toCamelCase,
@@ -34,6 +18,5 @@ module.exports={
     RateLimiter,
     // control
     Mutex,
-    Semaphore
-}
-
+    Semaphore,
+};
