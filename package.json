@@ -10,5 +10,11 @@
     "description": "",
     "devDependencies": {
         "@types/node": "^22.7.5"
-    }
+    },
+    "files": [
+        "src/string.js",
+        "src/file.js",
+        "src/resilience.js",
+        "src/control.js"
+    ]
 }
