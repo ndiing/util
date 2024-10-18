@@ -1,24 +1,84 @@
 ## Modules
 
 <dl>
+<dt><a href="#module_string">string</a></dt>
+<dd></dd>
 <dt><a href="#module_file">file</a></dt>
 <dd></dd>
 <dt><a href="#module_resilience">resilience</a></dt>
 <dd></dd>
-<dt><a href="#module_string">string</a></dt>
-<dd></dd>
 </dl>
 
-## Classes
+<a name="module_string"></a>
 
-<dl>
-<dt><a href="#Mutex">Mutex</a></dt>
-<dd><p>Kelas yang mengimplementasikan mekanisme mutex untuk penguncian sumber daya.</p>
-</dd>
-<dt><a href="#Semaphore">Semaphore</a></dt>
-<dd><p>Kelas yang mengimplementasikan mekanisme semaphore untuk pengelolaan akses ke sumber daya.</p>
-</dd>
-</dl>
+## string
+
+* [string](#module_string)
+    * [.toPascalCase(string)](#module_string.toPascalCase) ⇒ <code>string</code>
+    * [.toCamelCase(string)](#module_string.toCamelCase) ⇒ <code>string</code>
+    * [.toSnakeCase(string)](#module_string.toSnakeCase) ⇒ <code>string</code>
+    * [.toKebabCase(string)](#module_string.toKebabCase) ⇒ <code>string</code>
+    * [.toTitleCase(string)](#module_string.toTitleCase) ⇒ <code>string</code>
+
+<a name="module_string.toPascalCase"></a>
+
+### string.toPascalCase(string) ⇒ <code>string</code>
+Mengubah string menjadi format PascalCase.
+
+**Kind**: static method of [<code>string</code>](#module_string)  
+**Returns**: <code>string</code> - - String dalam format PascalCase.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | String input yang akan diubah. |
+
+<a name="module_string.toCamelCase"></a>
+
+### string.toCamelCase(string) ⇒ <code>string</code>
+Mengubah string menjadi format camelCase.
+
+**Kind**: static method of [<code>string</code>](#module_string)  
+**Returns**: <code>string</code> - - String dalam format camelCase.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | String input yang akan diubah. |
+
+<a name="module_string.toSnakeCase"></a>
+
+### string.toSnakeCase(string) ⇒ <code>string</code>
+Mengubah string menjadi format snake_case.
+
+**Kind**: static method of [<code>string</code>](#module_string)  
+**Returns**: <code>string</code> - - String dalam format snake_case.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | String input yang akan diubah. |
+
+<a name="module_string.toKebabCase"></a>
+
+### string.toKebabCase(string) ⇒ <code>string</code>
+Mengubah string menjadi format kebab-case.
+
+**Kind**: static method of [<code>string</code>](#module_string)  
+**Returns**: <code>string</code> - - String dalam format kebab-case.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | String input yang akan diubah. |
+
+<a name="module_string.toTitleCase"></a>
+
+### string.toTitleCase(string) ⇒ <code>string</code>
+Mengubah string menjadi format Title Case.
+
+**Kind**: static method of [<code>string</code>](#module_string)  
+**Returns**: <code>string</code> - - String dalam format Title Case.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | String input yang akan diubah. |
 
 <a name="module_file"></a>
 
@@ -72,6 +132,13 @@ Menulis data ke file dengan nama yang diberikan.Jika direktori tidak ada, direk
         * [~RateLimiter](#module_resilience..RateLimiter)
             * [new RateLimiter(maxRequests, interval)](#new_module_resilience..RateLimiter_new)
             * [.execute(fn)](#module_resilience..RateLimiter+execute) ⇒ <code>Promise.&lt;any&gt;</code>
+        * [~Mutex](#module_resilience..Mutex)
+            * [.lock()](#module_resilience..Mutex+lock) ⇒ <code>Promise.&lt;void&gt;</code>
+            * [.unlock()](#module_resilience..Mutex+unlock)
+        * [~Semaphore](#module_resilience..Semaphore)
+            * [new Semaphore(max)](#new_module_resilience..Semaphore_new)
+            * [.acquire()](#module_resilience..Semaphore+acquire) ⇒ <code>Promise.&lt;void&gt;</code>
+            * [.release()](#module_resilience..Semaphore+release)
 
 <a name="module_resilience.retry"></a>
 
@@ -225,131 +292,60 @@ Menjalankan fungsi jika batas permintaan belum terlampaui.
 | --- | --- | --- |
 | fn | <code>function</code> | Fungsi yang akan dijalankan. Harus mengembalikan sebuah promise. |
 
-<a name="module_string"></a>
+<a name="module_resilience..Mutex"></a>
 
-## string
-
-* [string](#module_string)
-    * [.toPascalCase(string)](#module_string.toPascalCase) ⇒ <code>string</code>
-    * [.toCamelCase(string)](#module_string.toCamelCase) ⇒ <code>string</code>
-    * [.toSnakeCase(string)](#module_string.toSnakeCase) ⇒ <code>string</code>
-    * [.toKebabCase(string)](#module_string.toKebabCase) ⇒ <code>string</code>
-    * [.toTitleCase(string)](#module_string.toTitleCase) ⇒ <code>string</code>
-
-<a name="module_string.toPascalCase"></a>
-
-### string.toPascalCase(string) ⇒ <code>string</code>
-Mengubah string menjadi format PascalCase.
-
-**Kind**: static method of [<code>string</code>](#module_string)  
-**Returns**: <code>string</code> - - String dalam format PascalCase.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>string</code> | String input yang akan diubah. |
-
-<a name="module_string.toCamelCase"></a>
-
-### string.toCamelCase(string) ⇒ <code>string</code>
-Mengubah string menjadi format camelCase.
-
-**Kind**: static method of [<code>string</code>](#module_string)  
-**Returns**: <code>string</code> - - String dalam format camelCase.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>string</code> | String input yang akan diubah. |
-
-<a name="module_string.toSnakeCase"></a>
-
-### string.toSnakeCase(string) ⇒ <code>string</code>
-Mengubah string menjadi format snake_case.
-
-**Kind**: static method of [<code>string</code>](#module_string)  
-**Returns**: <code>string</code> - - String dalam format snake_case.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>string</code> | String input yang akan diubah. |
-
-<a name="module_string.toKebabCase"></a>
-
-### string.toKebabCase(string) ⇒ <code>string</code>
-Mengubah string menjadi format kebab-case.
-
-**Kind**: static method of [<code>string</code>](#module_string)  
-**Returns**: <code>string</code> - - String dalam format kebab-case.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>string</code> | String input yang akan diubah. |
-
-<a name="module_string.toTitleCase"></a>
-
-### string.toTitleCase(string) ⇒ <code>string</code>
-Mengubah string menjadi format Title Case.
-
-**Kind**: static method of [<code>string</code>](#module_string)  
-**Returns**: <code>string</code> - - String dalam format Title Case.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>string</code> | String input yang akan diubah. |
-
-<a name="Mutex"></a>
-
-## Mutex
+### resilience~Mutex
 Kelas yang mengimplementasikan mekanisme mutex untuk penguncian sumber daya.
 
-**Kind**: global class  
+**Kind**: inner class of [<code>resilience</code>](#module_resilience)  
 
-* [Mutex](#Mutex)
-    * [.lock()](#Mutex+lock) ⇒ <code>Promise.&lt;void&gt;</code>
-    * [.unlock()](#Mutex+unlock)
+* [~Mutex](#module_resilience..Mutex)
+    * [.lock()](#module_resilience..Mutex+lock) ⇒ <code>Promise.&lt;void&gt;</code>
+    * [.unlock()](#module_resilience..Mutex+unlock)
 
-<a name="Mutex+lock"></a>
+<a name="module_resilience..Mutex+lock"></a>
 
-### mutex.lock() ⇒ <code>Promise.&lt;void&gt;</code>
+#### mutex.lock() ⇒ <code>Promise.&lt;void&gt;</code>
 Mengunci mutex. Jika sudah terkunci, menunggu sampai dapat mengunci.
 
-**Kind**: instance method of [<code>Mutex</code>](#Mutex)  
+**Kind**: instance method of [<code>Mutex</code>](#module_resilience..Mutex)  
 **Returns**: <code>Promise.&lt;void&gt;</code> - - Sebuah promise yang diselesaikan saat mutex terkunci.  
-<a name="Mutex+unlock"></a>
+<a name="module_resilience..Mutex+unlock"></a>
 
-### mutex.unlock()
+#### mutex.unlock()
 Membuka kunci mutex dan memberi kesempatan kepada antrean untuk mengunci.
 
-**Kind**: instance method of [<code>Mutex</code>](#Mutex)  
-<a name="Semaphore"></a>
+**Kind**: instance method of [<code>Mutex</code>](#module_resilience..Mutex)  
+<a name="module_resilience..Semaphore"></a>
 
-## Semaphore
+### resilience~Semaphore
 Kelas yang mengimplementasikan mekanisme semaphore untuk pengelolaan akses ke sumber daya.
 
-**Kind**: global class  
+**Kind**: inner class of [<code>resilience</code>](#module_resilience)  
 
-* [Semaphore](#Semaphore)
-    * [new Semaphore(max)](#new_Semaphore_new)
-    * [.acquire()](#Semaphore+acquire) ⇒ <code>Promise.&lt;void&gt;</code>
-    * [.release()](#Semaphore+release)
+* [~Semaphore](#module_resilience..Semaphore)
+    * [new Semaphore(max)](#new_module_resilience..Semaphore_new)
+    * [.acquire()](#module_resilience..Semaphore+acquire) ⇒ <code>Promise.&lt;void&gt;</code>
+    * [.release()](#module_resilience..Semaphore+release)
 
-<a name="new_Semaphore_new"></a>
+<a name="new_module_resilience..Semaphore_new"></a>
 
-### new Semaphore(max)
+#### new Semaphore(max)
 
 | Param | Type | Description |
 | --- | --- | --- |
 | max | <code>number</code> | Jumlah maksimum akses yang diizinkan pada satu waktu. |
 
-<a name="Semaphore+acquire"></a>
+<a name="module_resilience..Semaphore+acquire"></a>
 
-### semaphore.acquire() ⇒ <code>Promise.&lt;void&gt;</code>
+#### semaphore.acquire() ⇒ <code>Promise.&lt;void&gt;</code>
 Mengakuisisi akses semaphore. Jika sudah mencapai maksimum, menunggu sampai ada akses yang dilepaskan.
 
-**Kind**: instance method of [<code>Semaphore</code>](#Semaphore)  
+**Kind**: instance method of [<code>Semaphore</code>](#module_resilience..Semaphore)  
 **Returns**: <code>Promise.&lt;void&gt;</code> - - Sebuah promise yang diselesaikan saat akses diperoleh.  
-<a name="Semaphore+release"></a>
+<a name="module_resilience..Semaphore+release"></a>
 
-### semaphore.release()
+#### semaphore.release()
 Membebaskan akses semaphore, memberi kesempatan kepada antrean untuk mengakuisisi akses.
 
-**Kind**: instance method of [<code>Semaphore</code>](#Semaphore)  
+**Kind**: instance method of [<code>Semaphore</code>](#module_resilience..Semaphore)  
