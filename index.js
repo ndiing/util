@@ -1,7 +1,7 @@
-const { read, write } = require("./util/file.js");
-const { Mutex, Semaphore } = require("./util/control.js");
-const { retry, timeout, CircuitBreaker, Bulkhead, RateLimiter } = require("./util/resilience.js");
-const { toPascalCase, toCamelCase, toSnakeCase, toKebabCase, toTitleCase } = require("./util/string.js");
+const { read, write } = require("./lib/file.js");
+const { Mutex, Semaphore } = require("./lib/control.js");
+const { retry, timeout, CircuitBreaker, Bulkhead, RateLimiter } = require("./lib/resilience.js");
+const { toPascalCase, toCamelCase, toSnakeCase, toKebabCase, toTitleCase } = require("./lib/string.js");
 
 module.exports = {
     read,
